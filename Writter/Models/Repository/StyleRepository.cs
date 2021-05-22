@@ -46,10 +46,15 @@ namespace Writter.Models.Repository
             return Style;
 
         }
-
+        public STYLE GetIdNote(int id)
+        {
+            var Style = db.STYLE.Where(i => i.ID_NOTE == id).FirstOrDefault();
+            return Style;
+        }
         public List<STYLE> GetAll()
         {
-            throw new NotImplementedException();
+            var result = db.STYLE.ToList();
+            return result;
         }
 
         public string Update(STYLE item)

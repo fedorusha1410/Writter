@@ -17,6 +17,7 @@ using Writter.dbo_Writter;
 using Writter.View.Pages;
 using Writter.ViewModels;
 using System.Threading;
+using Writter.Models.UnitOfWork;
 
 namespace Writter
 {
@@ -42,20 +43,12 @@ namespace Writter
             Latter.Text = UpLetter.ToUpper();
             Users_name.Text = nameLatter + "'s Writter";
             note = new ObservableCollection<NOTE>();
+
             try
             {
-                using (WritterModel db = new WritterModel())
-                {
-                    USERS temp = uSERS1;
-                    var res = db.NOTE.Where(item => item.LOGIN_USER == temp.LOGIN &&
-                                             item.TYPE_NOTE == Type_Note.Todo_List.ToString());
-                    foreach (var i in res)
-                    {
-                        note.Add(i);
+                UnitOfWork unitOfWork = new UnitOfWork();
+                note = unitOfWork.Note.GetNotesWithTyle(Type_Note.Todo_List.ToString(), uSERS1);
 
-                    }
-
-                }
                 foreach (var i in note)
                 {
                     PopupNotifier notifier = new PopupNotifier();
@@ -67,7 +60,7 @@ namespace Writter
                     var y = (DateTime)i.DATE_CREATE;
                     var z = (y - x).TotalDays;
 
-                    if (z <= 2)
+                    if (z <= 2 && z>0)
                     {
                         notifier.ContentText = "Nearest event:  " + i.NAME_OF_NOTE + " in " + Convert.ToInt32(z) + " days";
                         //Thread.Sleep(500);
@@ -81,8 +74,7 @@ namespace Writter
             {
                 MessageBox.Show(ex.Message);
             }
-            //Application.Current.Resources["SystemControlHighlightListAccentLowBrush"] = new SolidColorBrush(Colors.LightSalmon);
-            //Application.Current.Resources["SystemControlHighlightListAccentMediumBrush"] = new SolidColorBrush(Colors.LightSalmon);
+           
 
         }
         #region Pages

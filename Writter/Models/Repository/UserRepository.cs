@@ -37,11 +37,11 @@ namespace Writter.Models.Repository
             }
         }
 
-        public USERS Get(string login, string password)
+        public USERS GetByLogin(string login, string password)
         {
             USERS user = db.USERS.Find(login);
-            if (user.PASSWORD == password) {
-                return db.USERS.Find(login);
+            if (user.PASSWORD == password && user.STATUS_USER==StatusUser.Active.ToString()) {
+                return user;
             }
             return null;
             

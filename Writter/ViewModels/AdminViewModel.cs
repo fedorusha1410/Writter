@@ -28,10 +28,11 @@ namespace Writter.ViewModels
 
         #region Private Field
         private int index;
+        UnitOfWork unitOfWork1 = new UnitOfWork();
         private ObservableCollection<USERS> _users;
         private void InitUsers()
         {
-            foreach(var item in db.USERS)
+            foreach(var item in unitOfWork1.User.GetAll())
             {
                 _users.Add(item);
                 OnPropertyChanged();
@@ -66,7 +67,12 @@ namespace Writter.ViewModels
         public AdminViewModel()
         {
             _users = new ObservableCollection<USERS>();
-            InitUsers();
+            // InitUsers();
+            foreach (var item in unitOfWork1.User.GetAll())
+            {
+                _users.Add(item);
+                OnPropertyChanged();
+            }
         }
 
         #region Command
@@ -117,7 +123,30 @@ namespace Writter.ViewModels
             {
                 try
                 {
-                    USERS _user = AllUsers[Index];
+                    //// var getUserByLogin = db.USERS.Find(_user.LOGIN);
+                    //USERS RemoveUser = unitOfWork1.User.GetByLogin(_user.LOGIN, _user.PASSWORD);
+                    //unitOfWork1.User.Delete(_user.LOGIN);
+                    //foreach (var i in unitOfWork1.Note.GetAll())
+                    //{
+                    //    foreach (var j in unitOfWork1.Style.GetAll())
+                    //    {
+                    //        if (i.LOGIN_USER == RemoveUser.LOGIN && i.ID_NOTE == j.ID_NOTE)
+                    //        {
+                    //            unitOfWork1.Style.Delete(j.ID_STYLE_NOTE);
+                    //            unitOfWork1.Note.Delete(i.ID_NOTE);
+                    //        }
+                    //    }
+                    //}
+                    //_users.Remove(_user);
+
+
+
+
+                    ////db.USERS.Remove(getUserByLogin);
+                    ////_users.Remove(getUserByLogin);
+                    ////db.SaveChanges();
+                    //MessageBox.Show("User deleted successfully!");
+                    USERS _user = AllUsers[Index] as USERS;
                     var getUserByLogin = db.USERS.Find(_user.LOGIN);
                     foreach (var i in db.NOTE)
                     {
@@ -127,13 +156,14 @@ namespace Writter.ViewModels
                             {
                                 db.NOTE.Remove(i);
                                 db.STYLE.Remove(j);
+                                db.USERS.Remove(getUserByLogin);
+                                _users.Remove(getUserByLogin);
+                                db.SaveChanges();
                             }
                         }
 
                     }
-                    db.USERS.Remove(getUserByLogin);
-                    _users.Remove(getUserByLogin);
-                    db.SaveChanges();
+                   
                     MessageBox.Show("User deleted successfully!");
 
                 }

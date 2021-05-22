@@ -72,7 +72,7 @@ namespace Writter.ViewModels
                             var newPass = USERS.getHash(NewPassword);
                             UnitOfWork unitOfWork = new UnitOfWork();
                             _user.PASSWORD = tmp;
-                            uSER = unitOfWork.User.Get(_user.LOGIN, tmp);
+                            uSER = unitOfWork.User.GetByLogin(_user.LOGIN, tmp);
                             if (uSER != null)
                             {
                                 if (NewPassword != null )

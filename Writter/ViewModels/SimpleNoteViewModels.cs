@@ -161,7 +161,7 @@ namespace Writter.ViewModels
                                   //db.SaveChanges();
 
                                  _notesSimple.Add(note);
-                                  MessageBox.Show(Message+StyleMessage);
+                                 // MessageBox.Show(Message+StyleMessage);
 
                               
 
@@ -189,10 +189,11 @@ namespace Writter.ViewModels
         public RelayCommand OpenTask => this._openComman ?? (
                             _openComman = new RelayCommand(obj =>
                               {
-                                  if (SelectElementIndex > 0)
+                                  if (SelectElementIndex >= 0)
                                   {
-                                      ContentInfo = _notesSimple[SelectElementIndex].CONTENT;
-                                      Name_Of_SimpleNote = _notesSimple[SelectElementIndex].NAME_OF_NOTE;
+                                      NOTE Note_open = _notesSimple[SelectElementIndex] as NOTE;
+                                      ContentInfo = Note_open.CONTENT;
+                                      Name_Of_SimpleNote = Note_open.NAME_OF_NOTE;
                                   }
                               }));
 
@@ -224,16 +225,11 @@ namespace Writter.ViewModels
                {
                    try
                    {
-                        using(WritterModel db= new WritterModel())
-                        {
-                           USERS temp = HomePage.uSERS1;
-                           //var res = db.NOTEs.Where(item => item.LOGIN_USER == temp.LOGIN &&
-                           //                        item.TYPE_NOTE == Type_Note.Simple_Note.ToString());
+                       USERS temp = HomePage.uSERS1;
+                       UnitOfWork unitOfWork = new UnitOfWork();
+                       AllSimpleNote = unitOfWork.Note.GetSortByDate(temp);
 
-                           AllSimpleNote = new ObservableCollection<NOTE>(db.NOTE.Where(i => i.TYPE_NOTE == Type_Note.Simple_Note.ToString() && i.LOGIN_USER == temp.LOGIN)
-                                                                            .OrderBy(i => i.DATE_CREATE));
-                           
-                        }
+                    
                    }
                    catch(Exception e)
                    {
@@ -250,16 +246,11 @@ namespace Writter.ViewModels
             {
                 try
                 {
-                    using (WritterModel db = new WritterModel())
-                    {
-                        USERS temp = HomePage.uSERS1;
-                        //var res = db.NOTEs.Where(item => item.LOGIN_USER == temp.LOGIN &&
-                        //                        item.TYPE_NOTE == Type_Note.Simple_Note.ToString());
 
-                        AllSimpleNote = new ObservableCollection<NOTE>(db.NOTE.Where(i => i.TYPE_NOTE == Type_Note.Simple_Note.ToString() && i.LOGIN_USER == temp.LOGIN)
-                                                                         .OrderBy(i => i.NAME_OF_NOTE));
+                    USERS temp = HomePage.uSERS1;
+                    UnitOfWork unitOfWork = new UnitOfWork();
+                    AllSimpleNote = unitOfWork.Note.GetSortByAlpha(temp);
 
-                    }
                 }
                 catch (Exception e)
                 {
@@ -285,26 +276,15 @@ namespace Writter.ViewModels
            
             try
             {
-                using (WritterModel db = new WritterModel())
-                {
-                    USERS temp = HomePage.uSERS1;
-                    var res = db.NOTE.Where(item => item.LOGIN_USER == temp.LOGIN &&
-                                             item.TYPE_NOTE == Type_Note.Simple_Note.ToString());
-                    foreach (var i in res)
-                    {
-                        _notesSimple.Add(i);
-                      
-                    }
-                   
-                }
+                USERS temp = HomePage.uSERS1;
+                UnitOfWork unitOfWork = new UnitOfWork();
+                _notesSimple = unitOfWork.Note.GetNotesWithTyle(Type_Note.Simple_Note.ToString(), temp);
+              
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-           
-           
-
 
         }
 

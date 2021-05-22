@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Writter.Command;
 using Writter.Models.dbo_Writter;
+using Writter.Models.UnitOfWork;
 
 namespace Writter.ViewModels
 {
@@ -36,19 +37,21 @@ namespace Writter.ViewModels
                 var values = (i as object[]);
                 var logInWindow = values[0] as Window;
 
+
+
+               
                 try
                 {
-                     
 
-                        if (Login == "admin" && (values[1] as PasswordBox).Password == "11111")
-                        {
+                    if (Login == "admin" && (values[1] as PasswordBox).Password == "11111")
+                    {
 
-                            USERS userAdmin = new USERS();
-                        
-                        
+                        USERS userAdmin = new USERS();
+
+
                         using (WritterModel context = new WritterModel())
                         {
-                            
+
                             userAdmin = context.USERS.Where(item => item.LOGIN == Login).FirstOrDefault();
                         }
                         if (userAdmin != null)
@@ -58,29 +61,46 @@ namespace Writter.ViewModels
                             home = new HomePage(symbol, user);
                             home.UserInformation.Visibility = Visibility.Visible;
                             home.Show();
-                             
+
                             logInWindow.Close();
                         }
-                        
+
+                    }
+                    else
+                    {
+                        var passwordBoxOnw = USERS.getHash((values[1] as PasswordBox).Password);
+                        USERS authUser = null;
+                        UnitOfWork unitOfWork = new UnitOfWork();
+                        authUser = unitOfWork.User.GetByLogin(Login, passwordBoxOnw);
+                        if (authUser != null)
+                        {
+
+                            user = authUser;
+                            symbol = authUser.NAME;
+                            home = new HomePage(symbol, user);
+                            home.UserInformation.Visibility = Visibility.Collapsed;
+                            home.Show();
+                            logInWindow.Close();
                         }
-                    var passwordBoxOnw = USERS.getHash((values[1] as PasswordBox).Password);
-                    USERS authUser = null;
-                    using (WritterModel db = new WritterModel())
-                    {
-                        authUser = db.USERS.Where(b => b.LOGIN == Login && b.PASSWORD == passwordBoxOnw && b.STATUS_USER==StatusUser.Active.ToString()).FirstOrDefault();
+                        else { throw new Exception("No such user exists"); }
+                    }
+                 
+                    //using (WritterModel db = new WritterModel())
+                    //{
+                    //    authUser = db.USERS.Where(b => b.LOGIN == Login && b.PASSWORD == passwordBoxOnw && b.STATUS_USER==StatusUser.Active.ToString()).FirstOrDefault();
                    
-                    if (authUser != null)
-                    {
+                    //if (authUser != null)
+                    //{
                        
-                        user = authUser;
-                        symbol = authUser.NAME;
-                        home = new HomePage(symbol, user);
-                        home.UserInformation.Visibility = Visibility.Collapsed;
-                        home.Show();
-                        logInWindow.Close();
-                    }
-                    else throw new Exception("No such user exists");
-                    }
+                    //    user = authUser;
+                    //    symbol = authUser.NAME;
+                    //    home = new HomePage(symbol, user);
+                    //    home.UserInformation.Visibility = Visibility.Collapsed;
+                    //    home.Show();
+                    //    logInWindow.Close();
+                    //}
+                    //else throw new Exception("No such user exists");
+                    //}
                 }
                 catch (Exception ex)
                 {
