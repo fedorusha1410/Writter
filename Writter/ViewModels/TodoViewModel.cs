@@ -121,8 +121,8 @@ namespace Writter.ViewModels
                      {
                          try
                          {
-                             //if (!(DateTimes is DateTime) || !(DateTimes is DateTime?))
-                             //    throw new Exception("Enter correct Date");
+                             if (DateTimes.Value.ToString().Length==0)
+                                 throw new Exception("Enter Date please!");
                              if (ContentTodo == null)
                                  throw new Exception("Enter Todo-note");
                              if (ContentTodo.Length > 50) throw new Exception("Note can be no more than 50 characters");
@@ -198,7 +198,7 @@ namespace Writter.ViewModels
                 deleteCommand = new RelayCommand(obj =>
                 {
                    
-                        if (Select_TODO_Element > 0)
+                        if (Select_TODO_Element >= 0)
                         {
                             using(WritterModel db= new WritterModel())
                             {

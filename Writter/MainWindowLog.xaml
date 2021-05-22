@@ -85,7 +85,7 @@
                                     Background="#FFEF2D6F"
                                     Margin="0 15 0 0"
                                     RenderTransformOrigin="0.5,0.5" 
-                                    Width="78"   
+                                    Width="78"  
                                 Command="{Binding LogInCommand}"  >
                                 <Button.CommandParameter>
                                     <MultiBinding Converter="{StaticResource cvv}">

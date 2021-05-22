@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Writter.Command;
 using Writter.dbo_Writter;
+using Writter.Models.UnitOfWork;
 
 namespace Writter.ViewModels
 {
@@ -17,6 +18,7 @@ namespace Writter.ViewModels
         #region Private Field
         private string goal;
         private int selectIndex;
+        private string selectStatus;
         private USERS _user = HomePage.uSERS1;
         private static ObservableCollection<NOTE> GetGoal()
         {
@@ -58,6 +60,15 @@ namespace Writter.ViewModels
             {
                 goal = value;
                 OnPropertyChanged("MyGoals");
+            }
+        }
+        public string SelectedStatus
+        {
+            get => selectStatus;
+            set
+            {
+                selectStatus = value;
+                OnPropertyChanged("SelectedStatus");
             }
         }
         public int SelectIndex
@@ -133,12 +144,15 @@ namespace Writter.ViewModels
                          try
                          {
                              USERS tempUser = null;
+                             if (goal==null)
+                                 throw new Exception("Write name your goal");
+                             if (IndexStatus== 0)
+                                 throw new Exception("Change status Goal!");
                              foreach(var i in _goals)
                              {
                                  if(i.NAME_OF_NOTE== goal)
-                                 {
-                                     throw new Exception("Goal with the same name already exists");
-                                 }
+                                 throw new Exception("Goal with the same name already exists");
+                                 
                              }
                             using(WritterModel db= new WritterModel())
                              {
@@ -249,39 +263,48 @@ namespace Writter.ViewModels
         public RelayCommand DeleteTask => this._deleteCommand ?? (
             _deleteCommand = new RelayCommand(obj =>
             {
-                if (SelectIndex > 0)
+                if (SelectIndex >= 0)
                 {
-                    using (WritterModel db = new WritterModel())
-                    {
-                        try
-                        {
-                            NOTE Note_Remove = _goals[SelectIndex] as NOTE;
-                            NOTE removeNot = new NOTE();
-                            STYLE style_remove = new STYLE();
-                            if (Note_Remove != null)
-                            {
-                                removeNot = db.NOTE.Where(x => x.ID_NOTE == Note_Remove.ID_NOTE).FirstOrDefault();
-                                style_remove = db.STYLE.Where(x => x.ID_NOTE == removeNot.ID_NOTE).FirstOrDefault();
-                                if (removeNot != null)
-                                {
-                                    // db.NOTEs.Remove(Note_Remove);
-                                    db.STYLE.Remove(style_remove);
-                                    db.NOTE.Remove(removeNot);
+                    UnitOfWork unitOfWork = new UnitOfWork();
+                    NOTE tmp = _goals[SelectIndex] as NOTE;
+                    NOTE remove = unitOfWork.Note.Get(tmp.ID_NOTE);
+                    unitOfWork.Style.Delete(remove.ID_NOTE);
+                    unitOfWork.Note.Delete(remove.ID_NOTE);
+                    MessageBox.Show("Data deleted successfully");
+                    _goals.RemoveAt(SelectIndex);
 
-                                    db.SaveChanges();
-                                    _goals.RemoveAt(SelectIndex);
-                                    db.Dispose();
-                                    MessageBox.Show("Data deleted successfully");
-                                }
 
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            MessageBox.Show(e.Message);
-                        }
+                    //using (WritterModel db = new WritterModel())
+                    //{
+                    //    try
+                    //    {
+                    //        NOTE Note_Remove = _goals[SelectIndex] as NOTE;
+                    //        NOTE removeNot = new NOTE();
+                    //        STYLE style_remove = new STYLE();
+                    //        if (Note_Remove != null)
+                    //        {
+                    //            removeNot = db.NOTE.Where(x => x.ID_NOTE == Note_Remove.ID_NOTE).FirstOrDefault();
+                    //            style_remove = db.STYLE.Where(x => x.ID_NOTE == removeNot.ID_NOTE).FirstOrDefault();
+                    //            if (removeNot != null)
+                    //            {
+                    //                // db.NOTEs.Remove(Note_Remove);
+                    //                db.STYLE.Remove(style_remove);
+                    //                db.NOTE.Remove(removeNot);
 
-                    }
+                    //                db.SaveChanges();
+                    //                _goals.RemoveAt(SelectIndex);
+                    //                db.Dispose();
+                    //                MessageBox.Show("Data deleted successfully");
+                    //            }
+
+                    //        }
+                    //    }
+                    //    catch (Exception e)
+                    //    {
+                    //        MessageBox.Show(e.Message);
+                    //    }
+
+                    //}
                 }
             }));
 

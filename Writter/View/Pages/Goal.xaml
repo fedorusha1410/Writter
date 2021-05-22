@@ -115,7 +115,7 @@
                         <Border Height="40"  Margin="20 27 250 0" Width="150" Background="White" CornerRadius="5" >
                             <ComboBox Width="140"
                              Foreground="#FFFF2D79"
-                              ItemsSource="{Binding Status}" SelectedIndex="{Binding IndexStatus}"></ComboBox>
+                              ItemsSource="{Binding Status}" SelectedValue="{Binding SelectedStatus}" SelectedIndex="{Binding IndexStatus}"></ComboBox>
 
                         </Border>
 

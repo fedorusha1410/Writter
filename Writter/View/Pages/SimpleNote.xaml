@@ -64,13 +64,17 @@
                                               SelectedIndex="{Binding IndexSizeFont,
                                               UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                                               ItemsSource="{Binding FontSizeSelect}" Height="23"/>
-                                  
-                                    <Button Content="Save" Command="{Binding SaveCommand}"   
-                                            Margin="2 10 15 2" Foreground="#DD000000" Width="64" Background="White"
+
+                                    <Button  Command="{Binding SaveCommand}"   
+                                            Margin="2 10 15 2" Foreground="#FFF28FB1" Width="64" Background="White"
                                             BorderBrush="White" BorderThickness="2" 
-                                            />
-                                    <Button Content="Clear" Command="{Binding ClearCommand}"
-                                            Margin="2 10 15 2" Foreground="#DD000000"  BorderBrush="White" BorderThickness="2" Background="White" />
+                                            >
+                                        <materialDesign:PackIcon Kind="ContentSave"   Width="30" Height="27"/>
+                                    </Button>
+                                    <Button  Command="{Binding ClearCommand}" HorizontalContentAlignment="Center"
+                                            Margin="2 10 15 2" Foreground="#DD000000"  BorderBrush="White" BorderThickness="2" Background="White" >
+                                        <materialDesign:PackIcon Kind="Clear"   Width="30" Height="27" Foreground="#FFF28FB1"/>
+                                    </Button>
                                 </StackPanel>
                                 <TextBox Text="{Binding Name_Of_SimpleNote, UpdateSourceTrigger=PropertyChanged}"
                                               Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -122,8 +126,14 @@
                        Grid.Row="2"
                        FontSize="45"
                        />
-            <Button Grid.Column="0" Grid.Row="2" Command="{Binding SortByDate}" Background="#FFF28FB1" VerticalAlignment="Top"
-                    Margin="50,90.4,841,0" Grid.ColumnSpan="2" BorderBrush="#FFF28FB1">Sort</Button>
+            <Button Grid.Column="0" Grid.Row="2" Command="{Binding SortByAlphabet}" Background="#FFF28FB1" Width="64" Height="32" VerticalAlignment="Top"
+                    Margin="0 100 385 0 " Grid.ColumnSpan="2" BorderBrush="#FFF28FB1">
+                <materialDesign:PackIcon Kind="SortAlphabeticalDescending"   Width="30" Height="25"/>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="2" Command="{Binding SortByDate}" Background="#FFF28FB1" Width="64" Height="32" VerticalAlignment="Top"
+                    Margin="0 100 545 0 " Grid.ColumnSpan="2" BorderBrush="#FFF28FB1">
+                <materialDesign:PackIcon Kind="SortCalendarDescending"   Width="30" Height="25"/>
+            </Button>
             <Border x:Name="borderStackPanepFromNotes"
                  CornerRadius="10"
                     Grid.Column="0" 

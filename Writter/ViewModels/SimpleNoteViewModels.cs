@@ -200,7 +200,7 @@ namespace Writter.ViewModels
         public RelayCommand DeleteTask => this._deleteCommand ?? (
             _deleteCommand = new RelayCommand(obj =>
              {
-                 if (SelectElementIndex > 0)
+                 if (SelectElementIndex >= 0)
                  {
                      
                          UnitOfWork unitOfWork = new UnitOfWork();
@@ -231,7 +231,7 @@ namespace Writter.ViewModels
                            //                        item.TYPE_NOTE == Type_Note.Simple_Note.ToString());
 
                            AllSimpleNote = new ObservableCollection<NOTE>(db.NOTE.Where(i => i.TYPE_NOTE == Type_Note.Simple_Note.ToString() && i.LOGIN_USER == temp.LOGIN)
-                                                                            .OrderBy(i => i.NAME_OF_NOTE));
+                                                                            .OrderBy(i => i.DATE_CREATE));
                            
                         }
                    }
@@ -240,6 +240,32 @@ namespace Writter.ViewModels
                        MessageBox.Show(e.Message);
                    }
                }));
+        }
+
+
+        private RelayCommand _sortAlpha;
+        public RelayCommand SortByAlphabet
+        {
+            get => _sortAlpha ?? (_sortAlpha = new RelayCommand(obj =>
+            {
+                try
+                {
+                    using (WritterModel db = new WritterModel())
+                    {
+                        USERS temp = HomePage.uSERS1;
+                        //var res = db.NOTEs.Where(item => item.LOGIN_USER == temp.LOGIN &&
+                        //                        item.TYPE_NOTE == Type_Note.Simple_Note.ToString());
+
+                        AllSimpleNote = new ObservableCollection<NOTE>(db.NOTE.Where(i => i.TYPE_NOTE == Type_Note.Simple_Note.ToString() && i.LOGIN_USER == temp.LOGIN)
+                                                                         .OrderBy(i => i.NAME_OF_NOTE));
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }));
         }
 
         private RelayCommand _refactor;
