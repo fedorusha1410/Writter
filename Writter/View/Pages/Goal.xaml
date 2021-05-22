@@ -1,0 +1,136 @@
+﻿<Page x:Class="Writter.View.Pages.Goal"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Writter.View.Pages"
+      mc:Ignorable="d" 
+      Height="780" Width="960"
+      Title="Goal">
+
+    <Grid x:Name="SimplNoteGrid" Background="White" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="145"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="30 0 0 0"
+                    FontFamily="/Writter;component/Resourses/#Lato"
+                   Text="One place to set goals and achieve them"/>
+        <Separator Grid.Row="1" Grid.Column="0"
+                   Background="Black"
+                   Grid.ColumnSpan="3" 
+                   VerticalAlignment="Top"
+                   Margin="0 20 0 0"/>
+        <Image Source="D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\Resourses\Goal.png"
+               Grid.Column="0"
+               Grid.Row="0"
+               Height="55"  
+               HorizontalAlignment="Right"
+               Margin="15 10 0 0"/>
+        <TextBlock  Text="Goals"
+                           
+                            Grid.Column="1" 
+                           Grid.Row="0"
+                           FontSize="55"
+                           Margin="5 20 0 0"
+                           FontWeight="Bold" HorizontalAlignment="Left"  FontFamily="/Writter;component/Resourses/#Montserrat Light"  />
+        <Grid Grid.Row="2" Grid.RowSpan="2" Margin="3" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="170"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="My Goals" FontSize="55"
+                      FontFamily="/Writter;component/Resourses/#Montserrat Light" 
+                      HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       Margin="0 20 0 0"/>
+            <Border Grid.Column="1" Grid.Row="0" Margin="30 120 50 60" Grid.RowSpan="3"
+                    CornerRadius="10"
+                    BorderBrush="#FFFFE2B9"
+                    BorderThickness="2"
+                    Background="#FFE0E0E0" >
+                <StackPanel>
+                    <ScrollViewer Height="472" Margin="0,0,-0.2,0">
+                        <ListView SelectedIndex="{Binding SelectIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding AllGoals, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="382" Height="462">
+                            <ListView.View >
+                                <GridView>
+                                    <GridViewColumn DisplayMemberBinding="{Binding NAME_OF_NOTE}"/>
+                                </GridView>
+                            </ListView.View>
+                            <ListView.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Open" Command="{Binding OpenGoal, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <MenuItem Header="Delete" Command="{Binding DeleteTask, UpdateSourceTrigger=PropertyChanged}" />
+                                </ContextMenu>
+                            </ListView.ContextMenu>
+                        </ListView>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="0"
+                    Margin="20 -25 20 20"
+                    Height="250"
+                    CornerRadius="10"
+                    Background="#FFFFE2B9"
+                    Grid.Column="0" Grid.RowSpan="2">
+                <StackPanel>
+                    <Border CornerRadius="5" Background="White"
+                        Grid.Row="0" Grid.Column="0" 
+                         Height="40" 
+                         Margin=" 20 25 20 0" BorderBrush="LightPink">
+                        <TextBox Width="385" 
+                                 FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 materialDesign:HintAssist.Hint="Name Goal"
+                            Text="{Binding MyGoals}"></TextBox>
+
+                    </Border>
+                    <Border Height="80" Background="White"
+                            CornerRadius="5" 
+                            Margin="20 20 20 0">
+                        <TextBox Width="385"
+                                 TextWrapping="Wrap" 
+                                 AcceptsTab="True"
+                                 FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                                  materialDesign:HintAssist.Hint="Write about your goal"
+                                  Text="{Binding GoalTell}">
+
+                        </TextBox>
+                    </Border>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Height="40"  Margin="20 27 250 0" Width="150" Background="White" CornerRadius="5" >
+                            <ComboBox Width="140"
+                             Foreground="#FFFF2D79"
+                              ItemsSource="{Binding Status}" SelectedIndex="{Binding IndexStatus}"></ComboBox>
+
+                        </Border>
+
+                    </StackPanel>
+                    <Button Height="36" Margin="244,-40,122.8,0" Content="Save" Command="{Binding SaveGoal}"/>
+                    <Button Height="36" Margin="328,-40,38.8,0" Content="Clear" Command="{Binding ClearGoal}"/>
+
+                </StackPanel>
+
+            </Border>
+            <Image Grid.Column="0" Grid.Row="1" Source="/Resourses/goUp.png"
+                   Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="335" Margin="70 140 0 0" Grid.RowSpan="2" />
+
+        </Grid>
+
+
+    </Grid>
+</Page>

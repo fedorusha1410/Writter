@@ -1,0 +1,191 @@
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Writter.exe
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\MaterialDesignColors.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Writter.exe.config
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\BouncyCastle.Crypto.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\EntityFramework.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\EntityFramework.SqlServer.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Google.Protobuf.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\K4os.Compression.LZ4.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\K4os.Hash.xxHash.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\MySql.Data.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\SQLDatabase.Net.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Buffers.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Memory.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Numerics.Vectors.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Security.AccessControl.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Security.Permissions.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Security.Principal.Windows.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Ubiety.Dns.Core.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Zstandard.Net.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\EntityFramework.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\EntityFramework.SqlServer.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Google.Protobuf.pdb
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Google.Protobuf.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\K4os.Compression.LZ4.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\K4os.Hash.xxHash.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\MaterialDesignColors.pdb
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Microsoft.WindowsAPICodePack.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\MySql.Data.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Buffers.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Memory.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Numerics.Vectors.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Security.AccessControl.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Security.Permissions.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Security.Principal.Windows.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\ru\EntityFramework.resources.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\MainWindowLog.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Setting.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\MainWindow.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\WindowAdmin.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\App.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter_MarkupCompile.cache
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter_MarkupCompile.lref
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\App.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\MainWindowLog.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Setting.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Styles\StyleForTracker.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\MainWindow.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Styles\Buttons.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Styles\TextElements.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\WindowAdmin.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter.g.resources
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter.Properties.Resources.resources
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter.csproj.GenerateResource.cache
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter.csproj.CoreCompileInputs.cache
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter.csproj.CopyComplete
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter.exe
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter.pdb
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\Writter.pdb
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\EntityFramework.SqlServerCompact.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\System.Data.SqlServerCe.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\EntityFramework.SqlServerCompact.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\DocumentFormat.OpenXml.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\DocumentFormat.OpenXml.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\BlogPost.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\Goals.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\HomePage.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\SimpleNote.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\TaskList.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\TODO.g.cs
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\BlogPost.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\TaskLists.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\Goals.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\HomePage.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\SimpleNote.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\TaskList.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\View\Pages\TODO.baml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\JetBrains.Annotations.dll
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\bin\Debug\JetBrains.Annotations.xml
+D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\obj\Debug\Writter.csprojAssemblyReference.cache
+D:\test_coursework\test\Writter\obj\Debug\View\Pages\TODO.baml
+D:\test_coursework\test\Writter\obj\Debug\View\Pages\BlogPost.g.cs
+D:\test_coursework\test\Writter\obj\Debug\View\Pages\Goal.g.cs
+D:\test_coursework\test\Writter\obj\Debug\View\Setting.g.cs
+D:\test_coursework\test\Writter\obj\Debug\View\HomePage.g.cs
+D:\test_coursework\test\Writter\obj\Debug\View\Pages\SimpleNote.g.cs
+D:\test_coursework\test\Writter\obj\Debug\View\Pages\TODO.g.cs
+D:\test_coursework\test\Writter\obj\Debug\WindowAdmin.g.cs
+D:\test_coursework\test\Writter\obj\Debug\App.g.cs
+D:\test_coursework\test\Writter\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\test_coursework\test\Writter\obj\Debug\Writter_MarkupCompile.cache
+D:\test_coursework\test\Writter\obj\Debug\Writter_MarkupCompile.lref
+D:\test_coursework\test\Writter\bin\Debug\Writter.exe.config
+D:\test_coursework\test\Writter\bin\Debug\Writter.exe
+D:\test_coursework\test\Writter\bin\Debug\Writter.pdb
+D:\test_coursework\test\Writter\bin\Debug\BouncyCastle.Crypto.dll
+D:\test_coursework\test\Writter\bin\Debug\DocumentFormat.OpenXml.dll
+D:\test_coursework\test\Writter\bin\Debug\EntityFramework.dll
+D:\test_coursework\test\Writter\bin\Debug\EntityFramework.SqlServer.dll
+D:\test_coursework\test\Writter\bin\Debug\EntityFramework.SqlServerCompact.dll
+D:\test_coursework\test\Writter\bin\Debug\Google.Protobuf.dll
+D:\test_coursework\test\Writter\bin\Debug\JetBrains.Annotations.dll
+D:\test_coursework\test\Writter\bin\Debug\K4os.Compression.LZ4.dll
+D:\test_coursework\test\Writter\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\test_coursework\test\Writter\bin\Debug\K4os.Hash.xxHash.dll
+D:\test_coursework\test\Writter\bin\Debug\MaterialDesignColors.dll
+D:\test_coursework\test\Writter\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\test_coursework\test\Writter\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\test_coursework\test\Writter\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\test_coursework\test\Writter\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\test_coursework\test\Writter\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\test_coursework\test\Writter\bin\Debug\MySql.Data.dll
+D:\test_coursework\test\Writter\bin\Debug\SQLDatabase.Net.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Buffers.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Data.SqlServerCe.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Memory.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Numerics.Vectors.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Security.AccessControl.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Security.Permissions.dll
+D:\test_coursework\test\Writter\bin\Debug\System.Security.Principal.Windows.dll
+D:\test_coursework\test\Writter\bin\Debug\Tulpep.NotificationWindow.dll
+D:\test_coursework\test\Writter\bin\Debug\Ubiety.Dns.Core.dll
+D:\test_coursework\test\Writter\bin\Debug\Zstandard.Net.dll
+D:\test_coursework\test\Writter\bin\Debug\DocumentFormat.OpenXml.xml
+D:\test_coursework\test\Writter\bin\Debug\EntityFramework.xml
+D:\test_coursework\test\Writter\bin\Debug\EntityFramework.SqlServer.xml
+D:\test_coursework\test\Writter\bin\Debug\EntityFramework.SqlServerCompact.xml
+D:\test_coursework\test\Writter\bin\Debug\Google.Protobuf.pdb
+D:\test_coursework\test\Writter\bin\Debug\Google.Protobuf.xml
+D:\test_coursework\test\Writter\bin\Debug\JetBrains.Annotations.xml
+D:\test_coursework\test\Writter\bin\Debug\K4os.Compression.LZ4.xml
+D:\test_coursework\test\Writter\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\test_coursework\test\Writter\bin\Debug\K4os.Hash.xxHash.xml
+D:\test_coursework\test\Writter\bin\Debug\MaterialDesignColors.pdb
+D:\test_coursework\test\Writter\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\test_coursework\test\Writter\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\test_coursework\test\Writter\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\test_coursework\test\Writter\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\test_coursework\test\Writter\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\test_coursework\test\Writter\bin\Debug\Microsoft.WindowsAPICodePack.xml
+D:\test_coursework\test\Writter\bin\Debug\MySql.Data.xml
+D:\test_coursework\test\Writter\bin\Debug\System.Buffers.xml
+D:\test_coursework\test\Writter\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\test_coursework\test\Writter\bin\Debug\System.Memory.xml
+D:\test_coursework\test\Writter\bin\Debug\System.Numerics.Vectors.xml
+D:\test_coursework\test\Writter\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\test_coursework\test\Writter\bin\Debug\System.Security.AccessControl.xml
+D:\test_coursework\test\Writter\bin\Debug\System.Security.Permissions.xml
+D:\test_coursework\test\Writter\bin\Debug\System.Security.Principal.Windows.xml
+D:\test_coursework\test\Writter\bin\Debug\ru\EntityFramework.resources.dll
+D:\test_coursework\test\Writter\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\test_coursework\test\Writter\obj\Debug\App.baml
+D:\test_coursework\test\Writter\obj\Debug\View\Pages\BlogPost.baml
+D:\test_coursework\test\Writter\obj\Debug\View\Pages\Goal.baml
+D:\test_coursework\test\Writter\obj\Debug\View\Setting.baml
+D:\test_coursework\test\Writter\obj\Debug\Styles\StyleForTracker.baml
+D:\test_coursework\test\Writter\obj\Debug\View\HomePage.baml
+D:\test_coursework\test\Writter\obj\Debug\View\Pages\SimpleNote.baml
+D:\test_coursework\test\Writter\obj\Debug\Styles\Buttons.baml
+D:\test_coursework\test\Writter\obj\Debug\Styles\TextElements.baml
+D:\test_coursework\test\Writter\obj\Debug\WindowAdmin.baml
+D:\test_coursework\test\Writter\obj\Debug\Writter.g.resources
+D:\test_coursework\test\Writter\obj\Debug\Writter.Properties.Resources.resources
+D:\test_coursework\test\Writter\obj\Debug\Writter.csproj.GenerateResource.cache
+D:\test_coursework\test\Writter\obj\Debug\Writter.csproj.CoreCompileInputs.cache
+D:\test_coursework\test\Writter\obj\Debug\Writter.csproj.CopyComplete
+D:\test_coursework\test\Writter\obj\Debug\Writter.exe
+D:\test_coursework\test\Writter\obj\Debug\Writter.pdb
+D:\test_coursework\test\Writter\obj\Debug\MainWindowLog.g.cs
+D:\test_coursework\test\Writter\obj\Debug\MainWindow.g.cs
+D:\test_coursework\test\Writter\obj\Debug\MainWindowLog.baml
+D:\test_coursework\test\Writter\obj\Debug\MainWindow.baml
+D:\test_coursework\test\Writter\obj\Debug\Writter.csprojAssemblyReference.cache

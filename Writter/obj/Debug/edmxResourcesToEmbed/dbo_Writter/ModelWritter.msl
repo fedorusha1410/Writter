@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище WritterModelContainer" CdmEntityContainer="WritterEntities">
+    <EntitySetMapping Name="NOTE">
+      <EntityTypeMapping TypeName="WritterModel.NOTE">
+        <MappingFragment StoreEntitySet="NOTE">
+          <ScalarProperty Name="ID_NOTE" ColumnName="ID_NOTE" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="DATE_CREATE" ColumnName="DATE_CREATE" />
+          <ScalarProperty Name="TIME_CREATE" ColumnName="TIME_CREATE" />
+          <ScalarProperty Name="LOGIN_USER" ColumnName="LOGIN_USER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STYLE">
+      <EntityTypeMapping TypeName="WritterModel.STYLE">
+        <MappingFragment StoreEntitySet="STYLE">
+          <ScalarProperty Name="ID_STYLE_NOTE" ColumnName="ID_STYLE_NOTE" />
+          <ScalarProperty Name="TYPE_NOTE" ColumnName="TYPE_NOTE" />
+          <ScalarProperty Name="STATUS_NOTE" ColumnName="STATUS_NOTE" />
+          <ScalarProperty Name="ID_NOTE" ColumnName="ID_NOTE" />
+          <ScalarProperty Name="FONTSIZE" ColumnName="FONTSIZE" />
+          <ScalarProperty Name="FONTFAMILY" ColumnName="FONTFAMILY" />
+          <ScalarProperty Name="FOREGROUND" ColumnName="FOREGROUND" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="WritterModel.USERS">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="TYPE_USER" ColumnName="TYPE_USER" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

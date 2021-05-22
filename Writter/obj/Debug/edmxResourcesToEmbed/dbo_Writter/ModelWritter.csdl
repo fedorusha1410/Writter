@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WritterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NOTE">
+    <Key>
+      <PropertyRef Name="ID_NOTE" />
+    </Key>
+    <Property Name="ID_NOTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONTENT" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_CREATE" Type="DateTime" Precision="0" />
+    <Property Name="TIME_CREATE" Type="Time" Precision="7" />
+    <Property Name="LOGIN_USER" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="STYLE" Relationship="Self.FK_STYLE_ID_NOTE" FromRole="NOTE" ToRole="STYLE" />
+    <NavigationProperty Name="USERS" Relationship="Self.FK_USER_LOGIN" FromRole="NOTE" ToRole="USERS" />
+  </EntityType>
+  <EntityType Name="STYLE">
+    <Key>
+      <PropertyRef Name="ID_STYLE_NOTE" />
+    </Key>
+    <Property Name="ID_STYLE_NOTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE_NOTE" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_NOTE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ID_NOTE" Type="Int32" />
+    <Property Name="FONTSIZE" Type="Int32" Nullable="false" />
+    <Property Name="FONTFAMILY" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FOREGROUND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="NOTE" Relationship="Self.FK_STYLE_ID_NOTE" FromRole="STYLE" ToRole="NOTE" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="LOGIN" />
+    </Key>
+    <Property Name="LOGIN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TYPE_USER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="PHOTO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="NOTE" Relationship="Self.FK_USER_LOGIN" FromRole="USERS" ToRole="NOTE" />
+  </EntityType>
+  <Association Name="FK_STYLE_ID_NOTE">
+    <End Role="NOTE" Type="Self.NOTE" Multiplicity="0..1" />
+    <End Role="STYLE" Type="Self.STYLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTE">
+        <PropertyRef Name="ID_NOTE" />
+      </Principal>
+      <Dependent Role="STYLE">
+        <PropertyRef Name="ID_NOTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_LOGIN">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+    <End Role="NOTE" Type="Self.NOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="LOGIN" />
+      </Principal>
+      <Dependent Role="NOTE">
+        <PropertyRef Name="LOGIN_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WritterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NOTE" EntityType="Self.NOTE" />
+    <EntitySet Name="STYLE" EntityType="Self.STYLE" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" />
+    <AssociationSet Name="FK_STYLE_ID_NOTE" Association="Self.FK_STYLE_ID_NOTE">
+      <End Role="NOTE" EntitySet="NOTE" />
+      <End Role="STYLE" EntitySet="STYLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_LOGIN" Association="Self.FK_USER_LOGIN">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="NOTE" EntitySet="NOTE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

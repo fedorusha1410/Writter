@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище WritterModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="NOTE">
+    <Key>
+      <PropertyRef Name="ID_NOTE" />
+    </Key>
+    <Property Name="ID_NOTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DATE_CREATE" Type="date" />
+    <Property Name="TIME_CREATE" Type="time" Precision="7" />
+    <Property Name="LOGIN_USER" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="STYLE">
+    <Key>
+      <PropertyRef Name="ID_STYLE_NOTE" />
+    </Key>
+    <Property Name="ID_STYLE_NOTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE_NOTE" Type="nvarchar" MaxLength="14" />
+    <Property Name="ID_NOTE" Type="int" />
+    <Property Name="FONTSIZE" Type="int" Nullable="false" />
+    <Property Name="FONTFAMILY" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="FOREGROUND" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Writter.dbo.TestTable" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="TestTable">
+          <Property Name="vl" Type="int" />
+        </EntityType>-->
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="LOGIN" />
+    </Key>
+    <Property Name="LOGIN" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="TYPE_USER" Type="nvarchar" MaxLength="10" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="32" />
+    <Property Name="PHOTO" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <Association Name="FK_STYLE_ID_NOTE">
+    <End Role="NOTE" Type="Self.NOTE" Multiplicity="0..1" />
+    <End Role="STYLE" Type="Self.STYLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTE">
+        <PropertyRef Name="ID_NOTE" />
+      </Principal>
+      <Dependent Role="STYLE">
+        <PropertyRef Name="ID_NOTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_LOGIN">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+    <End Role="NOTE" Type="Self.NOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="LOGIN" />
+      </Principal>
+      <Dependent Role="NOTE">
+        <PropertyRef Name="LOGIN_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище WritterModelContainer">
+    <EntitySet Name="NOTE" EntityType="Self.NOTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STYLE" EntityType="Self.STYLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_STYLE_ID_NOTE" Association="Self.FK_STYLE_ID_NOTE">
+      <End Role="NOTE" EntitySet="NOTE" />
+      <End Role="STYLE" EntitySet="STYLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_LOGIN" Association="Self.FK_USER_LOGIN">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="NOTE" EntitySet="NOTE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

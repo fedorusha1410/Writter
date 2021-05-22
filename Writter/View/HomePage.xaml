@@ -1,0 +1,350 @@
+﻿<Window  x:Class="Writter.HomePage"
+        Icon="D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\Resourses\icon.png"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
+        Title="HomePage | Writter"   MinWidth="1200" MaxWidth="1200"
+         Height="800" 
+         MaxHeight="800"
+         Width="1200" MinHeight="800">
+   
+    <Window.Resources>
+        <Style x:Key="SearchWatermark" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center" />
+                            <Label x:Name="WaterMarkLabel" Content="{TemplateBinding Tag}" VerticalAlignment="Bottom" FontSize="13" Margin="0 3 0 0"
+                               Visibility="Collapsed" Foreground="#BDC1C4" FontFamily="/Cosmic;component/Resources/Fonts/#Montserrat Medium"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Text" Value=""/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto">
+                </RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250">
+                </ColumnDefinition>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="20"/>
+                <RowDefinition Height="356.4"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,943.6,0">
+                <Border.Background>
+                    <SolidColorBrush Color="#FFEF2D6F" Opacity="0.4"/>
+                </Border.Background>
+                <StackPanel>
+                  
+                   
+                        <Button x:Name="Account"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="0"
+                                Content="Your Writter "
+                                Foreground="Black"
+                                HorizontalContentAlignment="Stretch"
+                                FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                                Height="40"
+                                Width="250"
+                                Background="White"
+                               >
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border               
+                                  Height="{TemplateBinding Height}"
+                                     Width="{TemplateBinding Width}">
+                                        <Border.Background>
+                                            <SolidColorBrush x:Name="BorderColor" Color="#FFCC8CA1" Opacity="0.4" />
+                                        </Border.Background>
+                                        <ContentControl Margin="{TemplateBinding Padding}"
+                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Content="{TemplateBinding Content}" />
+
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup Name="CommonStates">
+                                                <VisualState Name="MouseOver">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="BorderColor"
+                                    Storyboard.TargetProperty="Color" To="#FFCC8CA1" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState Name="Normal">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="BorderColor"
+                                                            Storyboard.TargetProperty="Color" To="#FFEF2D6F"  />
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    <Border Height="218" Margin="0,0,-0.4,0" >
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BorderGoals" Color="#FFF9ABC5" Opacity="0.85"/>
+                        </Border.Background>
+                        <StackPanel>
+                            <Grid Background="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="61"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Border 
+                                        BorderBrush="#FFFF2770"
+                                        Height="80"
+                                        Width="50"
+                                        Margin="0 17 -2 0">
+                                    <TextBlock x:Name="Latter"
+                                               Style="{StaticResource Latter_Name_user}"
+                                               Grid.Column="0"
+                                               Grid.Row="0" />
+                                </Border>
+
+                                <Border x:Name="Info" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Height="67">
+                                    <StackPanel>
+                                        <TextBlock x:Name="Users_name" 
+                           FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                           FontSize="15"  
+                           Margin="0 5 0 0"/>
+                                        <TextBlock Text="Personal Plan"
+                           FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                           FontSize="10"
+                           Foreground="#FF777777"
+                           Margin="0 7 0 0 "/>
+                                    </StackPanel>
+
+                                </Border>
+                                <Separator Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" 
+                   VerticalAlignment="Top" 
+                   BorderBrush="Black"
+                   BorderThickness="1"/>
+                                <Border x:Name="ChangeInfo" 
+                Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
+                Margin="0 7 0 0" >
+                                    <StackPanel>
+                                        <Button x:Name="Change" 
+                        Background="White"
+                        FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                        FontSize="11"
+                        Padding="8"
+                        Height="38"
+                        HorizontalContentAlignment="Left"
+                        Foreground="Black"
+                        Content="Change Info about yourself"
+                        BorderBrush="LightGray"
+                                                Click="OpenSetting">
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border               
+                                                            Height="{TemplateBinding Height}"
+                                                            Width="{TemplateBinding Width}">
+                                                        <Border.Background>
+                                                            <SolidColorBrush x:Name="BorderColor" Color="White" />
+                                                        </Border.Background>
+                                                        <ContentControl Margin="{TemplateBinding Padding}"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Content="{TemplateBinding Content}" />
+
+                                                        <VisualStateManager.VisualStateGroups>
+                                                            <VisualStateGroup Name="CommonStates">
+                                                                <VisualState Name="MouseOver">
+                                                                    <Storyboard>
+                                                                        <ColorAnimation Storyboard.TargetName="BorderColor"
+                                    Storyboard.TargetProperty="Color" To="LightGray" />
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                                <VisualState Name="Normal">
+                                                                    <Storyboard>
+                                                                        <ColorAnimation Storyboard.TargetName="BorderColor"
+                                    Storyboard.TargetProperty="Color" To="White" />
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                            </VisualStateGroup>
+                                                        </VisualStateManager.VisualStateGroups>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                       
+                                    </StackPanel>
+                                </Border>
+                                <Separator Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" 
+                   VerticalAlignment="Top" 
+                   BorderBrush="Black"
+                   BorderThickness="1"/>
+                                <Border x:Name="LogOutBorder"
+                Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+            Margin="0 3 0 0" >
+                                    <Button x:Name="LogOut"
+                    Background="LightGray" 
+                    Height="Auto"
+                    Content="Log Out"
+                    FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                    FontSize="11"
+                    Padding="7"
+                    BorderBrush="LightGray"
+                    HorizontalContentAlignment="Left"
+                                            Click="LogOutButton"
+                    Foreground="Black">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border               
+                Height="{TemplateBinding Height}"
+                Width="{TemplateBinding Width}">
+                                                    <Border.Background>
+                                                        <SolidColorBrush x:Name="BorderColor" Color="White" />
+                                                    </Border.Background>
+                                                    <ContentControl Margin="{TemplateBinding Padding}"
+                                                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                    Content="{TemplateBinding Content}" />
+
+                                                    <VisualStateManager.VisualStateGroups>
+                                                        <VisualStateGroup Name="CommonStates">
+                                                            <VisualState Name="MouseOver">
+                                                                <Storyboard>
+                                                                    <ColorAnimation Storyboard.TargetName="BorderColor"
+                                                                    Storyboard.TargetProperty="Color" To="LightGray" />
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState Name="Normal">
+                                                                <Storyboard>
+                                                                    <ColorAnimation Storyboard.TargetName="BorderColor"
+                                                                                   Storyboard.TargetProperty="Color" To="White" />
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                        </VisualStateGroup>
+                                                    </VisualStateManager.VisualStateGroups>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    
+                                </Border>
+                            </Grid>
+                           
+                        </StackPanel>
+                    </Border>
+                    
+                    <TreeView>
+                       
+                        <TreeViewItem FontSize="15" FontWeight="DemiBold"
+                                      FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                                      Header="Note"
+                                      IsExpanded="False">
+                            <TreeViewItem x:Name="SNote"
+                                          Header="Simple Note" 
+                                          Selected="Simlpe_Note_Click" />
+                            
+                        </TreeViewItem>
+                        
+                        <TreeViewItem FontSize="15"
+                                      FontWeight="DemiBold"
+                                      FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                                      Header="Blog Post" 
+                                      IsExpanded="False">
+                            <TreeViewItem Header="Write My Blog"
+                                          Selected="Blog"/>
+                        </TreeViewItem>
+                        <TreeViewItem FontSize="15"
+                                      FontWeight="DemiBold" 
+                                      FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                                      Header="TO DO" 
+                                      IsExpanded="False">
+                            <TreeViewItem Header="New TODO-List"
+                                          Selected="Todo"/>
+                        </TreeViewItem>
+                        <TreeViewItem FontSize="15"
+                                      FontWeight="DemiBold" 
+                                      FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                                      Header="Goals" 
+                                      IsExpanded="False">
+                            <TreeViewItem Header="My Goals"
+                                          Selected="Goals"/>
+                        </TreeViewItem>
+                        <TreeViewItem x:Name="UserInformation" FontSize="15" 
+                                      FontWeight="DemiBold" 
+                                      FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                                      Header="Users" 
+                                      IsExpanded="False">
+                            <TreeViewItem Header="All Users"
+                                          Selected="Users"/>
+                        </TreeViewItem>
+                    </TreeView>
+                   
+                </StackPanel>
+            </Border>
+
+            <Border x:Name="Welcom"
+                    Grid.Column="1" 
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Background="White" 
+                    Margin="0.4,0,-0.4,0" >
+                
+                <StackPanel>
+
+                    <TextBlock FontFamily="/Writter;component/Resourses/#Montserrat Light"
+                               FontStretch="UltraExpanded" 
+                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Width="850"
+                               FontSize="50"
+                               Text="              All-in-one workspace"
+                               Margin="33,0,74,0"/>
+                    <Image  Height="300"
+                            Source="D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\Resourses\people.png"/>
+
+                </StackPanel>
+
+            </Border>
+            <Image Grid.Column="1" Grid.Row="2"
+                   Source="D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\Resourses\writterLogo.png" 
+                   Width="190" Height="60"
+                   Margin="0,0,9.6,10" 
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Right" />
+        </Grid>
+        <Frame x:Name="Note" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"  Height="780" Width="950"
+              Margin="242 20 0 0"
+               Content=""
+               NavigationUIVisibility="Hidden" />
+         
+       
+    </Grid>
+</Window>

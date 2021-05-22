@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SQLDatabase.Net.dll</id>
+        <version>2.7.0.0</version>
+        <title>Embedded SQL Database in memory and on disk</title>
+        <authors>sqldatabase.net</authors>
+        <owners>sqldatabase.net</owners>
+        <licenseUrl>http://sqldatabase.net/license.aspx</licenseUrl>
+        <projectUrl>http://www.sqldatabase.net/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>An embedded SQL database in one .dll which requires no configuration, supports standard ANSI SQL 89 and 92. It is reliable, fast and free, works with both on disk and in-memory sql database engines. Complete database management system in one file (.dll assembly) uses B-Tree indexes with one database file per schema and ability to add multiple database schema files either on disk or in memory . UTF 8 based encoding complete globalization support, entire database or column can be encrypted using AES 256-bit encryption. Store right to left or left to right language character sets. Same database file format for Windows, Linux, Mac, Android, iOS and ASP.NET.</description>
+        <summary>NetStandard 2.0 Strong-Named Signed dll database, in memory and on disk database files requires zero configuration and supports standard ANSI SQL 89 and 92.</summary>
+        <releaseNotes>Version 2.7.0.0 bug fixes, NetStandard2_0, Events.</releaseNotes>
+        <copyright>sqldatabase.net</copyright>
+        <tags>sql database sqldatabase .net in-memory db embedded ADO sqlserver ce nosql sqlite dll litedb sqldatabase.net</tags>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System.Data" targetFramework="" />
+        </frameworkAssemblies>
+    </metadata>
+</package>
