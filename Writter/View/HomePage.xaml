@@ -165,7 +165,7 @@
                         Height="38"
                         HorizontalContentAlignment="Left"
                         Foreground="Black"
-                        Content="Change Info about yourself"
+                        Content="Setting"
                         BorderBrush="LightGray"
                                                 Click="OpenSetting">
                                             <Button.Template>

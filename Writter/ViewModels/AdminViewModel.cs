@@ -28,6 +28,8 @@ namespace Writter.ViewModels
 
         #region Private Field
         private int index;
+        private USERS admin = HomePage.uSERS1;
+        
         UnitOfWork unitOfWork1 = new UnitOfWork();
         private ObservableCollection<USERS> _users;
         private void InitUsers()
@@ -67,12 +69,12 @@ namespace Writter.ViewModels
         public AdminViewModel()
         {
             _users = new ObservableCollection<USERS>();
-            // InitUsers();
-            foreach (var item in unitOfWork1.User.GetAll())
-            {
-                _users.Add(item);
-                OnPropertyChanged();
-            }
+            InitUsers();
+            //foreach (var item in unitOfWork1.User.GetAll())
+            //{
+            //    _users.Add(item);
+            //    OnPropertyChanged();
+            //}
         }
 
         #region Command
@@ -86,8 +88,11 @@ namespace Writter.ViewModels
 
                 try
                 {
+                    //USERS uSERS = unitOfWork1.User.GetByLogin("admin", "11111");
 
-
+                    //HomePage homePage = new HomePage(admin.NAME, admin);
+                    //homePage.UserInformation.Visibility = Visibility.Visible;
+                    //homePage.Show();
                     adminWindow.Close();
                 }
                 catch (Exception ex)
@@ -107,6 +112,11 @@ namespace Writter.ViewModels
                 var adminWindow = values[0] as Window;
                 try
                 {
+                    USERS uSERS = unitOfWork1.User.GetByLogin("admin", "11111");
+
+                    HomePage homePage = new HomePage(admin.NAME, admin);
+                    homePage.UserInformation.Visibility = Visibility.Visible;
+                    homePage.Show();
                     adminWindow.Close();
                 }
                 catch (Exception e)
@@ -123,30 +133,8 @@ namespace Writter.ViewModels
             {
                 try
                 {
-                    //// var getUserByLogin = db.USERS.Find(_user.LOGIN);
-                    //USERS RemoveUser = unitOfWork1.User.GetByLogin(_user.LOGIN, _user.PASSWORD);
-                    //unitOfWork1.User.Delete(_user.LOGIN);
-                    //foreach (var i in unitOfWork1.Note.GetAll())
-                    //{
-                    //    foreach (var j in unitOfWork1.Style.GetAll())
-                    //    {
-                    //        if (i.LOGIN_USER == RemoveUser.LOGIN && i.ID_NOTE == j.ID_NOTE)
-                    //        {
-                    //            unitOfWork1.Style.Delete(j.ID_STYLE_NOTE);
-                    //            unitOfWork1.Note.Delete(i.ID_NOTE);
-                    //        }
-                    //    }
-                    //}
-                    //_users.Remove(_user);
-
-
-
-
-                    ////db.USERS.Remove(getUserByLogin);
-                    ////_users.Remove(getUserByLogin);
-                    ////db.SaveChanges();
-                    //MessageBox.Show("User deleted successfully!");
-                    USERS _user = AllUsers[Index] as USERS;
+                   
+                    USERS _user = AllUsers[Index];
                     var getUserByLogin = db.USERS.Find(_user.LOGIN);
                     foreach (var i in db.NOTE)
                     {
@@ -154,16 +142,16 @@ namespace Writter.ViewModels
                         {
                             if (i.LOGIN_USER == getUserByLogin.LOGIN && i.ID_NOTE == j.ID_NOTE)
                             {
-                                db.NOTE.Remove(i);
                                 db.STYLE.Remove(j);
-                                db.USERS.Remove(getUserByLogin);
-                                _users.Remove(getUserByLogin);
-                                db.SaveChanges();
+                                db.NOTE.Remove(i);
                             }
                         }
 
                     }
                    
+                                db.USERS.Remove(getUserByLogin);
+                                _users.Remove(_user);
+                                db.SaveChanges();
                     MessageBox.Show("User deleted successfully!");
 
                 }
@@ -185,18 +173,17 @@ namespace Writter.ViewModels
                      {
                          UnitOfWork unitOfWork = new UnitOfWork();
                          USERS _user = AllUsers[Index];
-                         var getUserByLogin = db.USERS.Find(_user.LOGIN);
+                         var getUserByLogin = unitOfWork.User.GetByLogin(_user.LOGIN, _user.PASSWORD);
                               
                          Message = unitOfWork.User.UpdateStatus(getUserByLogin);
-                                    
-                                 
-                             
 
-                        
-                         //db.USERS.Remove(getUserByLogin);
-                         //_users.Remove(getUserByLogin);
-                         //db.SaveChanges();
-                         MessageBox.Show("User deleted successfully!");
+
+
+
+                         AllUsers.Clear();
+                         AllUsers = unitOfWork.User.GetAllUser();
+                         MessageBox.Show(Message);
+                      
                      }
                      catch (Exception e)
                      {

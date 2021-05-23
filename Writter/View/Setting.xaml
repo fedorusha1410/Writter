@@ -18,16 +18,15 @@
     <Grid>
         <TextBlock Text="Information about User"
                    HorizontalAlignment="Center"
-                   Margin="0 20 0 0"
+                   Margin="37,62,37.6,0"
                    FontSize="30"
                    FontFamily="/Writter;component/#Montserrat Light"
                    FontWeight="DemiBold"
-                   Foreground="DarkGray"
+                   Foreground="Gray"
                    />
         <Border 
                
-                Margin="10 45 10 2"
-                Height="340"
+                Margin="10,39,9.6,18"
                 >
             <Border.Background>
                 <SolidColorBrush Color="#FFEF2D6F" Opacity="0.4"/>
@@ -56,7 +55,7 @@
                          Margin="20 15 0 0" />
                 <Button VerticalAlignment="Bottom"
                         HorizontalAlignment="Right"
-                        Margin="0 85 10 0"
+                        Margin="0 105 10 0"
                         Command="{Binding RenameProperties }"
                         >
                     <materialDesign:PackIcon Kind="ContentSaveSettings" Height="20" Width="20"/>

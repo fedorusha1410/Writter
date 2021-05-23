@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +52,12 @@ namespace Writter.Models.Repository
         {
             return db.USERS.ToList();
         }
-
+        public ObservableCollection<USERS> GetAllUser()
+        {
+            ObservableCollection<USERS> all;
+            all = new ObservableCollection<USERS>(db.USERS.ToList());
+            return all;
+        }
         public string Update(USERS item)
         {
             string result= "Failed to change data";
@@ -81,13 +87,13 @@ namespace Writter.Models.Repository
         public string UpdateStatus(USERS uSER)
         {
             string result = "Failed to change data";
-            USERS user = db.USERS.FirstOrDefault(elem => elem.LOGIN == uSER.LOGIN);
+            USERS user = db.USERS.Find(uSER.LOGIN);
             if (user != null)
             {
                 user.STATUS_USER = StatusUser.Block.ToString();
-                Save();
             }
             result = "User blocked!!!";
+            Save();
             return result;
         }
         public void Save()

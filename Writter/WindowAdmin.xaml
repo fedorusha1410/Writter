@@ -42,7 +42,7 @@
                             Width="1058"
                             FontFamily="/Writter;component/Resourses/#Montserrat Light"
                             FontSize="20" AutoGenerateColumns="True"
-                                    SelectedIndex="{Binding Index}"
+                                    SelectedIndex="{Binding Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                             ItemsSource="{Binding AllUsers, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                 SelectionUnit="FullRow"
                             Name="UsersGrid"  >
