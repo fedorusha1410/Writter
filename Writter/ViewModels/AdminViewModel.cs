@@ -70,11 +70,7 @@ namespace Writter.ViewModels
         {
             _users = new ObservableCollection<USERS>();
             InitUsers();
-            //foreach (var item in unitOfWork1.User.GetAll())
-            //{
-            //    _users.Add(item);
-            //    OnPropertyChanged();
-            //}
+         
         }
 
         #region Command
@@ -88,11 +84,7 @@ namespace Writter.ViewModels
 
                 try
                 {
-                    //USERS uSERS = unitOfWork1.User.GetByLogin("admin", "11111");
-
-                    //HomePage homePage = new HomePage(admin.NAME, admin);
-                    //homePage.UserInformation.Visibility = Visibility.Visible;
-                    //homePage.Show();
+                    
                     adminWindow.Close();
                 }
                 catch (Exception ex)

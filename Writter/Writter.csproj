@@ -168,25 +168,26 @@
     <Compile Include="Help\Data.cs" />
     <Compile Include="Help\PasswordHelper.cs" />
     <Compile Include="Help\Validation\LoginValidRule.cs" />
+    <Compile Include="Help\Validation\NameValidRule.cs" />
     <Compile Include="Help\Validation\PasswordValidRule.cs" />
-    <Compile Include="Models\dbo_Writter\StatusUser.cs" />
-    <Compile Include="Models\dbo_Writter\Type_Note.cs" />
-    <Compile Include="Models\dbo_Writter\Type_User.cs" />
+    <Compile Include="Help\Validation\Models\dbo_Writter\StatusUser.cs" />
+    <Compile Include="Help\Validation\Models\dbo_Writter\Type_Note.cs" />
+    <Compile Include="Help\Validation\Models\dbo_Writter\Type_User.cs" />
     <Compile Include="MainWindowLog.xaml.cs">
       <DependentUpon>MainWindowLog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Repository\NoteRepository.cs" />
-    <Compile Include="Models\Repository\StyleRepository.cs" />
-    <Compile Include="Models\Repository\UserRepository.cs" />
-    <Compile Include="Models\UnitOfWork\UnitOfWork.cs" />
-    <Compile Include="Models\dbo_Writter\NOTE.cs" />
-    <Compile Include="Models\dbo_Writter\STYLE.cs" />
-    <Compile Include="Models\dbo_Writter\sysdiagrams.cs" />
-    <Compile Include="Models\dbo_Writter\USERS.cs" />
+    <Compile Include="Help\Validation\Models\Repository\NoteRepository.cs" />
+    <Compile Include="Help\Validation\Models\Repository\StyleRepository.cs" />
+    <Compile Include="Help\Validation\Models\Repository\UserRepository.cs" />
+    <Compile Include="Help\Validation\Models\UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Help\Validation\Models\dbo_Writter\NOTE.cs" />
+    <Compile Include="Help\Validation\Models\dbo_Writter\STYLE.cs" />
+    <Compile Include="Help\Validation\Models\dbo_Writter\sysdiagrams.cs" />
+    <Compile Include="Help\Validation\Models\dbo_Writter\USERS.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Help\BoolToVisibilityConverter.cs" />
-    <Compile Include="Models\Repository\IGenericRepository.cs" />
+    <Compile Include="Help\Validation\Models\Repository\IGenericRepository.cs" />
     <Compile Include="ViewModels\GoalViewModel.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -214,7 +215,7 @@
     <Compile Include="WindowAdmin.xaml.cs">
       <DependentUpon>WindowAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbo_Writter\WritterModel.cs" />
+    <Compile Include="Help\Validation\Models\dbo_Writter\WritterModel.cs" />
     <Page Include="MainWindowLog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

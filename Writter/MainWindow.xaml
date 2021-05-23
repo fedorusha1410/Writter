@@ -73,10 +73,16 @@
                              materialDesign:HintAssist.Hint="Enter name"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                              materialDesign:ColorZoneAssist.Foreground="#f12c6e"
-                             Text="{Binding Name}"
+                            
                              HorizontalAlignment="Center"
                              Width="180"
-                             Grid.ColumnSpan="2"/>
+                             Grid.ColumnSpan="2">
+                            <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <validation:NameValidRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <PasswordBox x:Name="password" 
                                  
                                  FontSize="15"

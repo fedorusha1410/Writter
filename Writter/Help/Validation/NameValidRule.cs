@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 namespace Writter.Help.Validation
 {
-    class LoginValidRule : ValidationRule
+    class NameValidRule : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
@@ -19,13 +19,14 @@ namespace Writter.Help.Validation
             //{
             //    return new ValidationResult(false, $"Поле не может начинаться с цифры");
             //}
-            if (!Regex.Match(charString, "^[a-zA-Z][a-zA-Z_\\d]*$").Success)
+            if (!Regex.Match(charString, "^[a-zA-Z][a-zA-Z-\\d]*$").Success)
             {
-                return new ValidationResult(false, $"The field can contain only Latin letters, numbers and _");
+                return new ValidationResult(false, $"The name cannot contain special characters, numbers, spaces and punctuation marks (exception -) ");
 
             }
 
             return ValidationResult.ValidResult;
         }
     }
-    }
+}
+

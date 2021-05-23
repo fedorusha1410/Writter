@@ -107,7 +107,7 @@ namespace Writter
         private void Users(object sender, RoutedEventArgs e)
         {
             new WindowAdmin().Show();
-            this.Close();
+            this.Hide();
             
         }
 

@@ -137,7 +137,7 @@
 
                                 <Border x:Name="Info" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Height="67">
                                     <StackPanel>
-                                        <TextBlock x:Name="Users_name" 
+                                        <TextBlock x:Name="Users_name" TextWrapping="WrapWithOverflow"
                            FontFamily="/Writter;component/Resourses/#Montserrat Light"
                            FontSize="15"  
                            Margin="0 5 0 0"/>
