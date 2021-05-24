@@ -13,7 +13,7 @@ namespace Writter.ViewModels
 {
     class LogInViewModel : BaseViewModel
     {
-        USERS user;
+        USER user;
         HomePage home;
         private string _login;
         string symbol;
@@ -46,7 +46,7 @@ namespace Writter.ViewModels
                     if (Login == "admin" && (values[1] as PasswordBox).Password == "11111")
                     {
 
-                        USERS userAdmin = new USERS();
+                        USER userAdmin = new USER();
 
 
                         using (WritterModel context = new WritterModel())
@@ -68,8 +68,8 @@ namespace Writter.ViewModels
                     }
                     else
                     {
-                        var passwordBoxOnw = USERS.getHash((values[1] as PasswordBox).Password);
-                        USERS authUser = null;
+                        var passwordBoxOnw = USER.getHash((values[1] as PasswordBox).Password);
+                        USER authUser = null;
                         UnitOfWork unitOfWork = new UnitOfWork();
                         authUser = unitOfWork.User.GetByLogin(Login, passwordBoxOnw);
                         if (authUser != null)

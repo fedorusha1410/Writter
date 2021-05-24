@@ -28,10 +28,10 @@ namespace Writter.ViewModels
 
         #region Private Field
         private int index;
-        private USERS admin = HomePage.uSERS1;
+        private USER admin = HomePage.uSERS1;
         
         UnitOfWork unitOfWork1 = new UnitOfWork();
-        private ObservableCollection<USERS> _users;
+        private ObservableCollection<USER> _users;
         private void InitUsers()
         {
             foreach(var item in unitOfWork1.User.GetAll())
@@ -55,7 +55,7 @@ namespace Writter.ViewModels
 
             }
         }
-        public ObservableCollection<USERS> AllUsers
+        public ObservableCollection<USER> AllUsers
         {
             get => _users;
             set
@@ -68,7 +68,7 @@ namespace Writter.ViewModels
         string Message;
         public AdminViewModel()
         {
-            _users = new ObservableCollection<USERS>();
+            _users = new ObservableCollection<USER>();
             InitUsers();
          
         }
@@ -104,7 +104,7 @@ namespace Writter.ViewModels
                 var adminWindow = values[0] as Window;
                 try
                 {
-                    USERS uSERS = unitOfWork1.User.GetByLogin("admin", "11111");
+                    USER uSERS = unitOfWork1.User.GetByLogin("admin", "11111");
 
                     HomePage homePage = new HomePage(admin.NAME, admin);
                     homePage.UserInformation.Visibility = Visibility.Visible;
@@ -126,16 +126,16 @@ namespace Writter.ViewModels
                 try
                 {
                    
-                    USERS _user = AllUsers[Index];
+                    USER _user = AllUsers[Index];
                     var getUserByLogin = db.USERS.Find(_user.LOGIN);
-                    foreach (var i in db.NOTE)
+                    foreach (var i in db.NOTEs)
                     {
-                        foreach (var j in db.STYLE)
+                        foreach (var j in db.STYLEs)
                         {
                             if (i.LOGIN_USER == getUserByLogin.LOGIN && i.ID_NOTE == j.ID_NOTE)
                             {
-                                db.STYLE.Remove(j);
-                                db.NOTE.Remove(i);
+                                db.STYLEs.Remove(j);
+                                db.NOTEs.Remove(i);
                             }
                         }
 
@@ -155,6 +155,8 @@ namespace Writter.ViewModels
             }));
         }
 
+   
+
         private RelayCommand blockUser;
         public RelayCommand BlockUser
         {
@@ -164,10 +166,10 @@ namespace Writter.ViewModels
                      try
                      {
                          UnitOfWork unitOfWork = new UnitOfWork();
-                         USERS _user = AllUsers[Index];
-                         var getUserByLogin = unitOfWork.User.GetByLogin(_user.LOGIN, _user.PASSWORD);
+                         USER _user = AllUsers[Index];
+                       //  var getUserByLogin = unitOfWork.User.GetByLogin(_user.LOGIN, _user.PASSWORD);
                               
-                         Message = unitOfWork.User.UpdateStatus(getUserByLogin);
+                         Message = unitOfWork.User.UpdateStatus(_user);
 
 
 

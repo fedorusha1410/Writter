@@ -53,9 +53,13 @@
                          Width="250"
                          HorizontalAlignment="Center"
                          Margin="20 15 0 0" />
+                <Image Source="{Binding }"/>
+                <Button Command="{Binding AddImage}" Width="150" Margin="0 15 0 0">
+                   Add Photo
+                </Button>
                 <Button VerticalAlignment="Bottom"
                         HorizontalAlignment="Right"
-                        Margin="0 105 10 0"
+                        Margin="0 60 10 0"
                         Command="{Binding RenameProperties }"
                         >
                     <materialDesign:PackIcon Kind="ContentSaveSettings" Height="20" Width="20"/>

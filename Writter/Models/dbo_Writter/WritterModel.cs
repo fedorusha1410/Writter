@@ -13,20 +13,20 @@ namespace Writter
         {
         }
 
-        public virtual DbSet<NOTE> NOTE { get; set; }
-        public virtual DbSet<STYLE> STYLE { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<USERS> USERS { get; set; }
+        public virtual DbSet<NOTE> NOTEs { get; set; }
+        public virtual DbSet<STYLE> STYLEs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<USER> USERS { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<USERS>()
+            modelBuilder.Entity<USER>()
                 .Property(e => e.PHOTO)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<USERS>()
-                .HasMany(e => e.NOTE)
-                .WithOptional(e => e.USERS)
+            modelBuilder.Entity<USER>()
+                .HasMany(e => e.NOTEs)
+                .WithOptional(e => e.USER)
                 .HasForeignKey(e => e.LOGIN_USER);
         }
     }

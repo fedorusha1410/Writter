@@ -29,10 +29,10 @@ namespace Writter
         string nameLatter;
         string UpLetter;
         static string login_name;
-        public static  USERS uSERS1;
+        public static  USER uSERS1;
         private ObservableCollection<NOTE> note;
 
-        public HomePage(string latter, USERS uSERS)
+        public HomePage(string latter, USER uSERS)
         {
  
             nameLatter = latter;

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Writter.Command;
 using Writter.dbo_Writter;
 using Writter.Models.dbo_Writter;
@@ -14,7 +15,7 @@ namespace Writter.ViewModels
 {
     class SignUpViewModel :BaseViewModel
     {
-        USERS _user;
+        USER _user;
         NOTE _note = new NOTE();
         STYLE _style = new STYLE();
         HomePage home;
@@ -64,6 +65,9 @@ namespace Writter.ViewModels
         }
         public string symbol;
 
+       
+        
+
         public DelegateCommand CreateAccount
         {
             get => new DelegateCommand((i) =>
@@ -79,8 +83,8 @@ namespace Writter.ViewModels
                       if ((values[1] as PasswordBox).Password.Length > 20 ||
                      (values[2] as PasswordBox).Password.Length > 20) throw new Exception("Password must be no more than 20 characters");
 
-                      var pass1 = USERS.getHash((values[1] as PasswordBox).Password);
-                      var pass2 = USERS.getHash((values[2] as PasswordBox).Password);
+                      var pass1 = USER.getHash((values[1] as PasswordBox).Password);
+                      var pass2 = USER.getHash((values[2] as PasswordBox).Password);
                       
                          UnitOfWork context = new UnitOfWork();
                           if (!pass1.Equals(pass2)) throw new Exception("Password mismatch!!!!");
@@ -88,11 +92,10 @@ namespace Writter.ViewModels
                           //{
                           //    if (user.LOGIN.Equals(Login)) throw new Exception("User with this login already exists");
                           //}
-                          _user = new USERS
+                          _user = new USER
                           {
                               NAME = Name,
                               LOGIN = Login,
-                              PHOTO = "true",
                               TYPE_USER = Type_User.User.ToString(),
                               PASSWORD = pass1,
                               STATUS_USER=StatusUser.Active.ToString()

@@ -129,12 +129,13 @@
                                         Height="80"
                                         Width="50"
                                         Margin="0 17 -2 0">
-                                    <TextBlock x:Name="Latter"
+                                   
+                                        <TextBlock x:Name="Latter"
                                                Style="{StaticResource Latter_Name_user}"
                                                Grid.Column="0"
                                                Grid.Row="0" />
                                 </Border>
-
+                                <Image Height="80" Width="50"  Source="{Binding Image, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
                                 <Border x:Name="Info" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Height="67">
                                     <StackPanel>
                                         <TextBlock x:Name="Users_name" TextWrapping="WrapWithOverflow"

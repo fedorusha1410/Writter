@@ -11,10 +11,10 @@ namespace Writter.ViewModels
 {
     class SettingViewModel : BaseViewModel
     {
-        USERS uSER = new USERS();
+        USER uSER = new USER();
         NOTE nOTE = new NOTE();
         string message;
-        private USERS _user = HomePage.uSERS1;
+        private USER _user = HomePage.uSERS1;
         private string _name = HomePage.uSERS1.NAME;
         private string _login = HomePage.uSERS1.LOGIN;
         private string _password;
@@ -68,8 +68,8 @@ namespace Writter.ViewModels
                     {
                         try
                         {
-                            var tmp = USERS.getHash(Password);
-                            var newPass = USERS.getHash(NewPassword);
+                            var tmp = USER.getHash(Password);
+                            var newPass = USER.getHash(NewPassword);
                             UnitOfWork unitOfWork = new UnitOfWork();
                             _user.PASSWORD = tmp;
                             uSER = unitOfWork.User.GetByLogin(_user.LOGIN, tmp);

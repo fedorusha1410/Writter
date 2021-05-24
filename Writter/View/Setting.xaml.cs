@@ -22,7 +22,7 @@ namespace Writter
     /// </summary>
     public partial class Setting : Window
     {      
-        public Setting(USERS uSERS)
+        public Setting(USER uSERS)
         {
             InitializeComponent();
             this.DataContext = new SettingViewModel();

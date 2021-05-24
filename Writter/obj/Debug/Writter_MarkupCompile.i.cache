@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\test_coursework\test\Writter\App.xaml
-121369750573
+121532597636
 
-471693081831
+48-970223045
 159-1455542539
-MainWindowLog.xaml;View\Pages\BlogPost.xaml;View\Pages\Goal.xaml;View\Setting.xaml;Styles\StyleForTracker.xaml;View\HomePage.xaml;MainWindow.xaml;View\Pages\SimpleNote.xaml;View\Pages\TODO.xaml;Styles\Buttons.xaml;Styles\TextElements.xaml;WindowAdmin.xaml;
+View\MainWindowLog.xaml;View\Pages\BlogPost.xaml;View\Pages\Goal.xaml;View\Setting.xaml;Styles\StyleForTracker.xaml;View\HomePage.xaml;View\MainWindow.xaml;View\Pages\SimpleNote.xaml;View\Pages\TODO.xaml;Styles\Buttons.xaml;Styles\TextElements.xaml;View\WindowAdmin.xaml;
 
-True
+False
 

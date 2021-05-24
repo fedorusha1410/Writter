@@ -19,13 +19,13 @@ namespace Writter.ViewModels
         private string goal;
         private int selectIndex;
         private string selectStatus;
-        private USERS _user = HomePage.uSERS1;
+        private USER _user = HomePage.uSERS1;
         private static ObservableCollection<NOTE> GetGoal()
         {
             var result = new ObservableCollection<NOTE>();
             try
             {
-                USERS temp = HomePage.uSERS1;
+                USER temp = HomePage.uSERS1;
                 UnitOfWork unitOfWork = new UnitOfWork();
                 result = unitOfWork.Note.GetNotesWithTyle(Type_Note.Goal.ToString(), temp);
                

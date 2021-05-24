@@ -18,10 +18,10 @@ namespace Writter.Models.Repository
         public string Create(STYLE item)
         {
             string result = "This user already exists";
-            bool checkIsExist = db.STYLE.Any(el => el.ID_STYLE_NOTE == item.ID_STYLE_NOTE);
+            bool checkIsExist = db.STYLEs.Any(el => el.ID_STYLE_NOTE == item.ID_STYLE_NOTE);
             if (!checkIsExist)
             {
-                db.STYLE.Add(item);
+                db.STYLEs.Add(item);
                 Save();
                 result = "Style add successfully";
             }
@@ -30,8 +30,8 @@ namespace Writter.Models.Repository
 
         public void Delete(int id)
         {
-            var STYLE = db.STYLE.Find(id);
-            db.STYLE.Remove(STYLE);
+            var STYLE = db.STYLEs.Find(id);
+            db.STYLEs.Remove(STYLE);
             Save();
         }
 
@@ -42,18 +42,18 @@ namespace Writter.Models.Repository
 
         public STYLE Get(int id)
         {
-            var Style = db.STYLE.Find(id);
+            var Style = db.STYLEs.Find(id);
             return Style;
 
         }
         public STYLE GetIdNote(int id)
         {
-            var Style = db.STYLE.Where(i => i.ID_NOTE == id).FirstOrDefault();
+            var Style = db.STYLEs.Where(i => i.ID_NOTE == id).FirstOrDefault();
             return Style;
         }
         public List<STYLE> GetAll()
         {
-            var result = db.STYLE.ToList();
+            var result = db.STYLEs.ToList();
             return result;
         }
 

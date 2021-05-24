@@ -8,12 +8,13 @@ namespace Writter
     using System.Security.Cryptography;
     using System.Text;
 
-    public partial class USERS
+    [Table("USERS")]
+    public partial class USER
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public USERS()
+        public USER()
         {
-            NOTE = new HashSet<NOTE>();
+            NOTEs = new HashSet<NOTE>();
         }
 
         [Key]
@@ -30,14 +31,15 @@ namespace Writter
         [StringLength(32)]
         public string NAME { get; set; }
 
-        [StringLength(6)]
+        [StringLength(512)]
         public string PHOTO { get; set; }
 
         [StringLength(15)]
         public string STATUS_USER { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NOTE> NOTE { get; set; }
+        public virtual ICollection<NOTE> NOTEs { get; set; }
+
 
         public static string getHash(string password)
         {
@@ -52,6 +54,5 @@ namespace Writter
                 return Convert.ToBase64String(hash);
             }
         }
-
     }
 }

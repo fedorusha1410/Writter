@@ -20,10 +20,10 @@ namespace Writter.Models.Repository
         public string Create(NOTE item)
         {
             string result = "This note already exists";
-            bool checkIsExist = db.NOTE.Any(el => el.ID_NOTE == item.ID_NOTE);
+            bool checkIsExist = db.NOTEs.Any(el => el.ID_NOTE == item.ID_NOTE);
             if (!checkIsExist)
             {
-                db.NOTE.Add(item);
+                db.NOTEs.Add(item);
                 Save();
                 result = "Task add successfully";
             }
@@ -32,8 +32,8 @@ namespace Writter.Models.Repository
 
         public void Delete(int id)
         {
-            var Note = db.NOTE.Find(id);
-            db.NOTE.Remove(Note);
+            var Note = db.NOTEs.Find(id);
+            db.NOTEs.Remove(Note);
             Save();
         }
 
@@ -44,13 +44,13 @@ namespace Writter.Models.Repository
 
         public NOTE Get(int id)
         {
-            var Note = db.NOTE.Find(id);
+            var Note = db.NOTEs.Find(id);
             return Note;
         }
-        public ObservableCollection<NOTE> GetNotesWithTyle(string Type, USERS user)
+        public ObservableCollection<NOTE> GetNotesWithTyle(string Type, USER user)
         {
             ObservableCollection<NOTE> note = new ObservableCollection<NOTE>();
-            var res = db.NOTE.Where(item => item.LOGIN_USER == user.LOGIN &&
+            var res = db.NOTEs.Where(item => item.LOGIN_USER == user.LOGIN &&
                                               item.TYPE_NOTE == Type);
             foreach (var i in res)
             {
@@ -59,18 +59,18 @@ namespace Writter.Models.Repository
             }
             return note;
         }
-        public ObservableCollection<NOTE> GetSortByDate(USERS user)
+        public ObservableCollection<NOTE> GetSortByDate(USER user)
         {
             ObservableCollection<NOTE> notes;
-            notes= new ObservableCollection<NOTE>(db.NOTE.Where(i => i.TYPE_NOTE == Type_Note.Simple_Note.ToString() && i.LOGIN_USER == user.LOGIN)
+            notes= new ObservableCollection<NOTE>(db.NOTEs.Where(i => i.TYPE_NOTE == Type_Note.Simple_Note.ToString() && i.LOGIN_USER == user.LOGIN)
                                                                             .OrderBy(i => i.DATE_CREATE));
             return notes;
         }
 
-        public ObservableCollection<NOTE> GetSortByAlpha(USERS user)
+        public ObservableCollection<NOTE> GetSortByAlpha(USER user)
         {
             ObservableCollection<NOTE> notes;
-            notes = new ObservableCollection<NOTE>(db.NOTE.Where(i => i.TYPE_NOTE == Type_Note.Simple_Note.ToString() && i.LOGIN_USER == user.LOGIN)
+            notes = new ObservableCollection<NOTE>(db.NOTEs.Where(i => i.TYPE_NOTE == Type_Note.Simple_Note.ToString() && i.LOGIN_USER == user.LOGIN)
                                                                             .OrderBy(i => i.NAME_OF_NOTE));
             return notes;
         }
@@ -79,7 +79,7 @@ namespace Writter.Models.Repository
 
         public List<NOTE> GetAll()
         {
-            var result = db.NOTE.ToList();
+            var result = db.NOTEs.ToList();
             return result;
         }
 

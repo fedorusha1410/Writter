@@ -22,7 +22,7 @@ namespace Writter.ViewModels
         string Message;
         string StyleMessage;
         STYLE _style;
-        private USERS _user = HomePage.uSERS1;
+        private USER _user = HomePage.uSERS1;
         static ObservableCollection<NOTE> _notesSimple;
         private string _contentNote;
         static string _fontfamily = "Montserrat_Light";
@@ -225,7 +225,7 @@ namespace Writter.ViewModels
                {
                    try
                    {
-                       USERS temp = HomePage.uSERS1;
+                       USER temp = HomePage.uSERS1;
                        UnitOfWork unitOfWork = new UnitOfWork();
                        AllSimpleNote = unitOfWork.Note.GetSortByDate(temp);
 
@@ -247,7 +247,7 @@ namespace Writter.ViewModels
                 try
                 {
 
-                    USERS temp = HomePage.uSERS1;
+                    USER temp = HomePage.uSERS1;
                     UnitOfWork unitOfWork = new UnitOfWork();
                     AllSimpleNote = unitOfWork.Note.GetSortByAlpha(temp);
 
@@ -276,7 +276,7 @@ namespace Writter.ViewModels
            
             try
             {
-                USERS temp = HomePage.uSERS1;
+                USER temp = HomePage.uSERS1;
                 UnitOfWork unitOfWork = new UnitOfWork();
                 _notesSimple = unitOfWork.Note.GetNotesWithTyle(Type_Note.Simple_Note.ToString(), temp);
               

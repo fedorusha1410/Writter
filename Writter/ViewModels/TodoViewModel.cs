@@ -32,7 +32,7 @@ namespace Writter.ViewModels
 
         #region Public Fields 
 
-        public USERS user = HomePage.uSERS1;
+        public USER user = HomePage.uSERS1;
         public ObservableCollection<NOTE> AllTODO
         {
             get { return _noteTODO; }
@@ -74,7 +74,7 @@ namespace Writter.ViewModels
             ObservableCollection<NOTE> result = new ObservableCollection<NOTE>();
             try
             {
-                USERS temp = HomePage.uSERS1;
+                USER temp = HomePage.uSERS1;
                 UnitOfWork unitOfWork = new UnitOfWork();
                 result = unitOfWork.Note.GetNotesWithTyle(Type_Note.Todo_List.ToString(), temp);
                 //using (WritterModel db = new WritterModel())

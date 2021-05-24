@@ -8,29 +8,40 @@ using Writter.Models.dbo_Writter;
 
 namespace Writter.Models.Repository
 {
-    class UserRepository : IRepository<USERS>
+    class UserRepository : IRepository<USER>
     {
         private WritterModel db;
         public UserRepository(WritterModel context)
         {
             db = context;
         }
-        public string Create(USERS item)
+        public string Create(USER item)
         {
             string result = "This user already exists";
-            bool checkIsExist = db.USERS.Any(el => el.LOGIN == item.LOGIN);
-            if (!checkIsExist)
+
+            using(var transaction=db.Database.BeginTransaction())
+            try
             {
-                db.USERS.Add(item);
-                Save();
-                result = "Registration completed successfully";
-            }
-            return result;
+                 bool checkIsExist = db.USERS.Any(el => el.LOGIN == item.LOGIN);
+                    if (!checkIsExist)
+                    {
+                        db.USERS.Add(item);
+                        Save();
+                        transaction.Commit();
+                        return result = "Registration completed successfully";
+                    }
+                }
+                catch
+                {
+                    transaction.Rollback();
+                }
+                    return result;
+           
         }
 
         public void Delete(string login)
         {
-            USERS user = db.USERS.Find(login);
+            USER user = db.USERS.Find(login);
             if (user != null)
             {
                 db.USERS.Remove(user);
@@ -38,9 +49,9 @@ namespace Writter.Models.Repository
             }
         }
 
-        public USERS GetByLogin(string login, string password)
+        public USER GetByLogin(string login, string password)
         {
-            USERS user = db.USERS.Find(login);
+            USER user = db.USERS.Find(login);
             if (user.PASSWORD == password && user.STATUS_USER==StatusUser.Active.ToString()) {
                 return user;
             }
@@ -48,20 +59,20 @@ namespace Writter.Models.Repository
             
         }
 
-        public List<USERS> GetAll()
+        public List<USER> GetAll()
         {
             return db.USERS.ToList();
         }
-        public ObservableCollection<USERS> GetAllUser()
+        public ObservableCollection<USER> GetAllUser()
         {
-            ObservableCollection<USERS> all;
-            all = new ObservableCollection<USERS>(db.USERS.ToList());
+            ObservableCollection<USER> all;
+            all = new ObservableCollection<USER>(db.USERS.ToList());
             return all;
         }
-        public string Update(USERS item)
+        public string Update(USER item)
         {
             string result= "Failed to change data";
-            USERS user = db.USERS.FirstOrDefault(el => el.LOGIN == item.LOGIN);
+            USER user = db.USERS.FirstOrDefault(el => el.LOGIN == item.LOGIN);
             if (user != null)
             {
                 
@@ -71,10 +82,10 @@ namespace Writter.Models.Repository
             }
             return result;
         }
-        public string UpdateName(USERS item, string name)
+        public string UpdateName(USER item, string name)
         {
             string result = "Failed to change data";
-            USERS user = db.USERS.FirstOrDefault(el => el.LOGIN == item.LOGIN);
+            USER user = db.USERS.FirstOrDefault(el => el.LOGIN == item.LOGIN);
             if (user != null)
             {
                 user.NAME = name;
@@ -84,15 +95,23 @@ namespace Writter.Models.Repository
             }
             return result;
         }
-        public string UpdateStatus(USERS uSER)
+        public string UpdateStatus(USER uSER)
         {
-            string result = "Failed to change data";
-            USERS user = db.USERS.Find(uSER.LOGIN);
+            string  result = "User blocked!!!";
+            USER user = db.USERS.Find(uSER.LOGIN);
             if (user != null)
             {
+                if (user.STATUS_USER == StatusUser.Active.ToString())
+                {
                 user.STATUS_USER = StatusUser.Block.ToString();
+
+                }
+                else
+                {
+                    user.STATUS_USER = StatusUser.Active.ToString();
+                    result = "User unblocked!!!";
+                }
             }
-            result = "User blocked!!!";
             Save();
             return result;
         }
@@ -101,7 +120,7 @@ namespace Writter.Models.Repository
             db.SaveChanges();
         }
 
-        public USERS Get(int id)
+        public USER Get(int id)
         {
             throw new NotImplementedException();
         }
@@ -111,15 +130,17 @@ namespace Writter.Models.Repository
             throw new NotImplementedException();
         }
 
-        List<USERS> IRepository<USERS>.GetAll()
+        List<USER> IRepository<USER>.GetAll()
         {
             throw new NotImplementedException();
         }
 
-        USERS IRepository<USERS>.Get(int id)
+        USER IRepository<USER>.Get(int id)
         {
             throw new NotImplementedException();
         }
+
+       
 
         //public string Create(USERS item)
         //{

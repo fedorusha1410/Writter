@@ -53,7 +53,7 @@
                                     Height="20" Name="_delete_user" Margin="20 0 20 10" Padding="1" 
                                       Foreground="White"
                                       />
-                            <MenuItem Header="Block" 
+                            <MenuItem Header="Block/Unblock" 
                                       Height="20" Foreground="White" Command="{Binding BlockUser, UpdateSourceTrigger=PropertyChanged}" Margin="20 0 20 0" Padding="1" Name="_block_user"/>
                         </ContextMenu>
                     </DataGrid.ContextMenu>

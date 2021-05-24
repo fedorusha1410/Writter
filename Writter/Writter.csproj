@@ -162,32 +162,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Command\Converter.cs" />
-    <Compile Include="Command\DelegateCommand.cs" />
+    <Compile Include="ViewModels\Command\Converter.cs" />
+    <Compile Include="ViewModels\Command\DelegateCommand.cs" />
     <Compile Include="Help\BindingProxy.cs" />
     <Compile Include="Help\Data.cs" />
     <Compile Include="Help\PasswordHelper.cs" />
     <Compile Include="Help\Validation\LoginValidRule.cs" />
     <Compile Include="Help\Validation\NameValidRule.cs" />
     <Compile Include="Help\Validation\PasswordValidRule.cs" />
-    <Compile Include="Help\Validation\Models\dbo_Writter\StatusUser.cs" />
-    <Compile Include="Help\Validation\Models\dbo_Writter\Type_Note.cs" />
-    <Compile Include="Help\Validation\Models\dbo_Writter\Type_User.cs" />
-    <Compile Include="MainWindowLog.xaml.cs">
+    <Compile Include="Models\dbo_Writter\StatusUser.cs" />
+    <Compile Include="Models\dbo_Writter\Type_Note.cs" />
+    <Compile Include="Models\dbo_Writter\Type_User.cs" />
+    <Compile Include="View\MainWindowLog.xaml.cs">
       <DependentUpon>MainWindowLog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Help\Validation\Models\Repository\NoteRepository.cs" />
-    <Compile Include="Help\Validation\Models\Repository\StyleRepository.cs" />
-    <Compile Include="Help\Validation\Models\Repository\UserRepository.cs" />
-    <Compile Include="Help\Validation\Models\UnitOfWork\UnitOfWork.cs" />
-    <Compile Include="Help\Validation\Models\dbo_Writter\NOTE.cs" />
-    <Compile Include="Help\Validation\Models\dbo_Writter\STYLE.cs" />
-    <Compile Include="Help\Validation\Models\dbo_Writter\sysdiagrams.cs" />
-    <Compile Include="Help\Validation\Models\dbo_Writter\USERS.cs" />
+    <Compile Include="Models\Repository\NoteRepository.cs" />
+    <Compile Include="Models\Repository\StyleRepository.cs" />
+    <Compile Include="Models\Repository\UserRepository.cs" />
+    <Compile Include="Models\UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Models\dbo_Writter\sysdiagrams.cs" />
+    <Compile Include="Models\dbo_Writter\NOTE.cs" />
+    <Compile Include="Models\dbo_Writter\STYLE.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\dbo_Writter\USER.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Help\BoolToVisibilityConverter.cs" />
-    <Compile Include="Help\Validation\Models\Repository\IGenericRepository.cs" />
+    <Compile Include="Models\Repository\IGenericRepository.cs" />
     <Compile Include="ViewModels\GoalViewModel.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -199,7 +200,7 @@
     <Compile Include="View\Pages\BlogPost.xaml.cs">
       <DependentUpon>BlogPost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="ViewModels\Command\RelayCommand.cs" />
     <Compile Include="View\Pages\Goal.xaml.cs">
       <DependentUpon>Goal.xaml</DependentUpon>
     </Compile>
@@ -212,11 +213,11 @@
     <Compile Include="View\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowAdmin.xaml.cs">
+    <Compile Include="View\WindowAdmin.xaml.cs">
       <DependentUpon>WindowAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Help\Validation\Models\dbo_Writter\WritterModel.cs" />
-    <Page Include="MainWindowLog.xaml">
+    <Compile Include="Models\dbo_Writter\WritterModel.cs" />
+    <Page Include="View\MainWindowLog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,7 +241,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -251,7 +252,7 @@
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -271,7 +272,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowAdmin.xaml">
+    <Page Include="View\WindowAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
