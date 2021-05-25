@@ -60,7 +60,7 @@
                              materialDesign:ColorZoneAssist.Foreground="#f12c6e"
                             
                              HorizontalAlignment="Center"
-                             Width="180"
+                             Width="210"
                              Grid.ColumnSpan="2">
                             <Binding Path="Login" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
@@ -73,9 +73,9 @@
                              materialDesign:HintAssist.Hint="Enter name"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                              materialDesign:ColorZoneAssist.Foreground="#f12c6e"
-                            
+                            Margin="0 15 0 0"
                              HorizontalAlignment="Center"
-                             Width="180"
+                             Width="210"
                              Grid.ColumnSpan="2">
                             <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
@@ -84,21 +84,22 @@
                             </Binding>
                         </TextBox>
                         <PasswordBox x:Name="password" 
-                                 
+                                 Margin="0 15 0 0"
                                  FontSize="15"
                                  materialDesign:HintAssist.Hint="Enter password"
                                  materialDesign:ColorZoneAssist.Foreground="#f12c6e"
-                                 Width="180">   
+                                 Width="210">   
                             <PasswordBox.Style>
                                 <Style TargetType="PasswordBox"  BasedOn="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                             </PasswordBox.Style>
                         </PasswordBox>
                         <PasswordBox x:Name="passwordreplase"
                                  FontSize="15"
+                                     Margin="0 15 0 0"
                                  materialDesign:HintAssist.Hint="Password replace"
                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                                  materialDesign:ColorZoneAssist.Foreground="#f12c6e"
-                                 Width="180" />
+                                 Width="210" />
 
                         <Button x:Name="SINGUP"
                             Content="SingUp"
@@ -133,7 +134,7 @@
                                Command="{Binding GetLogInWindow}"
                                RenderTransformOrigin="0.5,0.5"
                                HorizontalAlignment="Center"
-                               Margin="151,15,153,0">
+                               Margin="151,13,153,0">
                             <Button.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cvс}">
                                     <Binding ElementName="SignUpWindow"/>

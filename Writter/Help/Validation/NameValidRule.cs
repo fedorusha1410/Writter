@@ -21,7 +21,7 @@ namespace Writter.Help.Validation
             //}
             if (!Regex.Match(charString, "^[a-zA-Z][a-zA-Z-\\d]*$").Success)
             {
-                return new ValidationResult(false, $"The name cannot contain special characters, numbers, spaces and punctuation marks (exception -) ");
+                return new ValidationResult(false, $"The field can contain only Latin letters, numbers and -");
 
             }
 

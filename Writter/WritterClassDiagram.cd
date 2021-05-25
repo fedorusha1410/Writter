@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Writter.App" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.NOTE">
+    <Position X="26" Y="9.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAARAAAAAAAAAAAAEAAAAAAgAAAQAEAAIAAAAAiAAA=</HashCode>
+      <FileName>Models\dbo_Writter\NOTE.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type_Note" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Writter.STYLE">
+    <Position X="22.5" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAQAIAgAAAAAgAEAAAAAAAAAgAAA=</HashCode>
+      <FileName>Models\dbo_Writter\STYLE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.USER">
+    <Position X="29.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAEAACAAAAAAAAAAIgACAAAAEgACAAAEA=</HashCode>
+      <FileName>Models\dbo_Writter\USER.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type_User" />
+      <Property Name="StatusUser" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Writter.WritterModel" Collapsed="true">
+    <Position X="13.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgEAAAAAg=</HashCode>
+      <FileName>Models\dbo_Writter\WritterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.HomePage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIACQAAQAQEAAAAAAAAAAAAIAAAgACAAAACAAAIgA=</HashCode>
+      <FileName>View\HomePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.MainWindowLog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\MainWindowLog.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.BlogPost" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAACAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\Pages\BlogPost.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.SimpleNote" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\Pages\SimpleNote.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.TODO" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\Pages\TODO.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.Setting" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\Setting.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.149" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.WindowAdmin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WindowAdmin.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.Help.Data" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAABAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Help\Data.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.Help.PasswordHelper" Collapsed="true">
+    <Position X="17" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAIQAgEBAEAAAAAAIAAABAAAAAAgAAAICA=</HashCode>
+      <FileName>Help\PasswordHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.EFGenericRepository&lt;TEntity&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAABABAAAAAJAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Repository\IGenericRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.ViewModels.AdminViewModel" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAQTQAAAEAAAAAgAAAAEAAIAAAAEAIACBAAQ=</HashCode>
+      <FileName>ViewModels\AdminViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.BaseViewModel" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Writter.ViewModels.GoalViewModel" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEUAAAEEAKGAAAAAASFQACAAIBAYAIAAACAASQABAAA=</HashCode>
+      <FileName>ViewModels\GoalViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.LogInViewModel" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIAAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAQIAIABQA=</HashCode>
+      <FileName>ViewModels\LogInViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.MainViewModel" Collapsed="true">
+    <Position X="19" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAABAAAAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAI=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.NavigationViewModel" Collapsed="true">
+    <Position X="11.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\NavigationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.SettingViewModel" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAACAAAAIAAABAAAAQAAQAAAIECAQAQIAAAACA=</HashCode>
+      <FileName>ViewModels\SettingViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.SignUpViewModel" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAYIAAAAAAgAAAAgAAARAQAAAAAAIAGAAAQICIAICA=</HashCode>
+      <FileName>ViewModels\SignUpViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.SimpleNoteViewModels" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQSIiBAAAAFAEgAAAACBGADAKRAAAIAAAkAAYCAFAKA=</HashCode>
+      <FileName>ViewModels\SimpleNoteViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.ViewModels.TodoViewModel" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAEAAACAQEAAAAAAABAAgBAAAAgQAAgQAABIFASA=</HashCode>
+      <FileName>ViewModels\TodoViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.Help.Validation.LoginValidRule" Collapsed="true">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Help\Validation\LoginValidRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.Help.Validation.NameValidRule" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Help\Validation\NameValidRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.Help.Validation.PasswordValidRule" Collapsed="true">
+    <Position X="8.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Help\Validation\PasswordValidRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.Models.Repository.NoteRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAQAABAABAAAAAAAAEAAEAAAwAAAAAAAAQ=</HashCode>
+      <FileName>Models\Repository\NoteRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.Models.Repository.StyleRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAQAABAAAAAAAAAAAEAAEAAAhAAAAAAAAA=</HashCode>
+      <FileName>Models\Repository\StyleRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.Models.Repository.UserRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAEAAAwAABIAACAAAAAAIEAAEAAAgEAAAAAAAQ=</HashCode>
+      <FileName>Models\Repository\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.Models.UnitOfWork.UnitOfWork" Collapsed="true">
+    <Position X="17" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAQAAACAAAAAAAAAAAAAAAABAAAAIUAAAA=</HashCode>
+      <FileName>Models\UnitOfWork\UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.Properties.Resources" Collapsed="true">
+    <Position X="11.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAQAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.Properties.Settings" Collapsed="true">
+    <Position X="15.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Writter.View.Pages.Goal" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\Pages\Goal.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.Command.DelegateCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Command\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Writter.Command.RelayCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Command\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Writter.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="10" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAAAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\dbo_Writter\WritterModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Writter.ViewModels.IGenericRepository&lt;TEntity&gt;" Collapsed="true">
+    <Position X="8.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAABAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Repository\IGenericRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Writter.Models.dbo_Writter.StatusUser">
+    <Position X="17.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\dbo_Writter\StatusUser.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Writter.dbo_Writter.Type_Note">
+    <Position X="29.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\dbo_Writter\Type_Note.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Writter.dbo_Writter.Type_User">
+    <Position X="26.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\dbo_Writter\Type_User.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

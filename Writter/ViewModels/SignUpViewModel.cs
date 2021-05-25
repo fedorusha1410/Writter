@@ -81,13 +81,14 @@ namespace Writter.ViewModels
                       (values[1] as PasswordBox).Password==null ||
                       (values[2] as PasswordBox).Password==null) throw new Exception("Fill in all the data for registration");
                       if ((values[1] as PasswordBox).Password.Length > 20 ||
-                     (values[2] as PasswordBox).Password.Length > 20) throw new Exception("Password must be no more than 20 characters");
+                     (values[2] as PasswordBox).Password.Length > 20 || Name.Length>20 ||
+                     Login.Length>20 ) throw new Exception("Fields must be no more than 20 characters");
 
                       var pass1 = USER.getHash((values[1] as PasswordBox).Password);
                       var pass2 = USER.getHash((values[2] as PasswordBox).Password);
                       
                          UnitOfWork context = new UnitOfWork();
-                          if (!pass1.Equals(pass2)) throw new Exception("Password mismatch!!!!");
+                      if (!pass1.Equals(pass2)) { throw new Exception("Password mismatch!!!!"); }
                           //foreach(USER user in db.USERS)
                           //{
                           //    if (user.LOGIN.Equals(Login)) throw new Exception("User with this login already exists");
@@ -102,6 +103,10 @@ namespace Writter.ViewModels
                           };
                           UnitOfWork unitOfWork = new UnitOfWork();
                           message = unitOfWork.User.Create(_user);
+                      if(message== "This user already exists")
+                      {
+                          throw new Exception("This user already exists");
+                      }
                           MessageBox.Show(message);            
                       symbol = _user.NAME;
                       Latter = Name;

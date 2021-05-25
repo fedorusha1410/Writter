@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Writter.Models.dbo_Writter;
 
 namespace Writter.Models.Repository
@@ -11,6 +12,7 @@ namespace Writter.Models.Repository
     class UserRepository : IRepository<USER>
     {
         private WritterModel db;
+
         public UserRepository(WritterModel context)
         {
             db = context;
@@ -115,6 +117,22 @@ namespace Writter.Models.Repository
             Save();
             return result;
         }
+
+        //public void DelUser(string login)
+        //{
+        //    using (WritterModel context = new WritterModel())
+        //    {
+        //        try
+        //        {
+        //            context.Database.ExecuteSqlCommand($"DELETE FROM USERS WHERE LOGIN={login}");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //        }
+        //    }
+        //}
+
         public void Save()
         {
             db.SaveChanges();

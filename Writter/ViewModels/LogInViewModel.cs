@@ -51,7 +51,7 @@ namespace Writter.ViewModels
 
                         using (WritterModel context = new WritterModel())
                         {
-
+                           
                             userAdmin = context.USERS.Where(item => item.LOGIN == Login).FirstOrDefault();
                         }
                         if (userAdmin != null)
@@ -64,10 +64,14 @@ namespace Writter.ViewModels
 
                             logInWindow.Close();
                         }
+                          
+                        
 
                     }
                     else
                     {
+                        if (Login.Length > 20 || (values[1] as PasswordBox).Password.Length > 20)
+                            throw new Exception("Fields must be no more than 20 characters");
                         var passwordBoxOnw = USER.getHash((values[1] as PasswordBox).Password);
                         USER authUser = null;
                         UnitOfWork unitOfWork = new UnitOfWork();

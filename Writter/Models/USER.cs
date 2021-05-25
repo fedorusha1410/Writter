@@ -40,7 +40,6 @@ namespace Writter
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NOTE> NOTEs { get; set; }
 
-
         public static string getHash(string password)
         {
             if (String.IsNullOrEmpty(password))
@@ -54,5 +53,6 @@ namespace Writter
                 return Convert.ToBase64String(hash);
             }
         }
+
     }
 }
