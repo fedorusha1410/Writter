@@ -188,3 +188,4 @@ D:\test_coursework\test\Writter\obj\Debug\WindowAdmin.g.cs
 D:\test_coursework\test\Writter\obj\Debug\WindowAdmin.baml
 D:\test_coursework\test\Writter\obj\Debug\MainWindowLog.g.cs
 D:\test_coursework\test\Writter\obj\Debug\MainWindowLog.baml
+D:\test_coursework\test\Writter\obj\Debug\Writter.csprojAssemblyReference.cache

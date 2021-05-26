@@ -37,44 +37,63 @@ namespace Writter
 
         private void OpenFile(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "RichText Files (*.rtf)|*.rtf|All files (*.*)|*.*";
-
-            if (ofd.ShowDialog() == true)
+            try
             {
-                TextRange doc = new TextRange(WtiteText.Document.ContentStart, WtiteText.Document.ContentEnd);
-                using (FileStream fs = new FileStream(ofd.FileName, FileMode.Open))
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "Text Files (*.txt)|*.txt|HTML Files (*.html)|*.html|All files (*.*)|*.*";
+
+                if (ofd.ShowDialog() == true)
                 {
-                    if (System.IO.Path.GetExtension(ofd.FileName).ToLower() == ".rtf")
-                        doc.Load(fs, DataFormats.Rtf);
-                    else if (System.IO.Path.GetExtension(ofd.FileName).ToLower() == ".txt")
-                        doc.Load(fs, DataFormats.Text);
-                    else
-                        doc.Load(fs, DataFormats.Xaml);
+                    TextRange doc = new TextRange(WtiteText.Document.ContentStart, WtiteText.Document.ContentEnd);
+
+                    using (FileStream fs = new FileStream(ofd.FileName, FileMode.Open))
+                    {
+
+                        if (System.IO.Path.GetExtension(ofd.FileName).ToLower() == ".html")
+                            doc.Load(fs, DataFormats.Html);
+                        else if (System.IO.Path.GetExtension(ofd.FileName).ToLower() == ".txt")
+                            doc.Load(fs, DataFormats.Text);
+                        else
+                            //doc.Load(fs, DataFormats.Xaml);
+                            throw new Exception("Wrong format");
+                    }
                 }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
+           
 
 
         }
 
         private void SaveText(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Text Files (*.txt)|*.txt|RichText Files (*.rtf)|*.rtf|XAML Files (*.xaml)|*.xaml|All files (*.*)|*.*";
-            if (sfd.ShowDialog() == true)
+            try
             {
-                TextRange doc = new TextRange(WtiteText.Document.ContentStart, WtiteText.Document.ContentEnd);
-                using (FileStream fs = File.Create(sfd.FileName))
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Text Files (*.txt)|*.txt|RichText Files (*.rtf)|*.rtf|HTML Files (*.html)|*.html|All files (*.*)|*.*";
+                if (sfd.ShowDialog() == true)
                 {
-                    if (System.IO.Path.GetExtension(sfd.FileName).ToLower() == ".rtf")
-                        doc.Save(fs, DataFormats.Rtf);
-                    else if (System.IO.Path.GetExtension(sfd.FileName).ToLower() == ".txt")
-                        doc.Save(fs, DataFormats.Text);
-                    else
-                        doc.Save(fs, DataFormats.Xaml);
+                    TextRange doc = new TextRange(WtiteText.Document.ContentStart, WtiteText.Document.ContentEnd);
+                    using (FileStream fs = File.Create(sfd.FileName))
+                    {
+                        if (System.IO.Path.GetExtension(sfd.FileName).ToLower() == ".html")
+                            doc.Save(fs, DataFormats.Html);
+                        else if (System.IO.Path.GetExtension(sfd.FileName).ToLower() == ".txt")
+                            doc.Save(fs, DataFormats.Text);
+                        else
+                            //doc.Save(fs, DataFormats.Xaml);
+                            throw new Exception("You can save only in the suggested formats!");
+                    }
                 }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
-            
+
+
 
         }
 

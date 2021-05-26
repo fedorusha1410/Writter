@@ -86,7 +86,7 @@ namespace Writter.ViewModels
                             home.Show();
                             logInWindow.Close();
                         }
-                        else { throw new Exception("No such user exists"); }
+                        //else { throw new Exception("No such user exists"); }
                     }
                  
                     //using (WritterModel db = new WritterModel())

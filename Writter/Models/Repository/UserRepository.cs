@@ -51,13 +51,44 @@ namespace Writter.Models.Repository
             }
         }
 
-        public USER GetByLogin(string login, string password)
+        public void RefactorPhoto(string login, string photo)
         {
             USER user = db.USERS.Find(login);
-            if (user.PASSWORD == password && user.STATUS_USER==StatusUser.Active.ToString()) {
-                return user;
+            if (user.PHOTO == null)
+            {
+                user.PHOTO = photo;
+                Save();
+                MessageBox.Show("Photo set and save");
             }
-            return null;
+            else
+            {
+                user.PHOTO = photo;
+                Save();
+                MessageBox.Show("photo modified and save");
+            }
+
+        }
+        public USER GetByLogin(string login, string password)
+        {
+            try
+            {
+            USER user = db.USERS.Find(login);
+                if (user != null)
+                {
+                    if (user.PASSWORD == password && user.STATUS_USER == StatusUser.Active.ToString())
+                    {
+                        return user;
+                    }
+                }
+                else throw new Exception("Wrong data");
+               
+          
+            } catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+
+            }
+                return null;
             
         }
 
@@ -77,7 +108,7 @@ namespace Writter.Models.Repository
             USER user = db.USERS.FirstOrDefault(el => el.LOGIN == item.LOGIN);
             if (user != null)
             {
-                
+                user.NAME = item.NAME;
                 user.PASSWORD = item.PASSWORD;
                 Save();
                 result = "Data changed successfully";

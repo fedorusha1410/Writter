@@ -189,6 +189,7 @@
     <Compile Include="Help\BoolToVisibilityConverter.cs" />
     <Compile Include="Models\Repository\IGenericRepository.cs" />
     <Compile Include="ViewModels\GoalViewModel.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
@@ -309,7 +310,9 @@
   <ItemGroup>
     <Resource Include="Resourses\writterLogo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resourses\empty.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourses\icon.png" />
   </ItemGroup>

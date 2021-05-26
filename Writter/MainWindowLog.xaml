@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         Icon="D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\Resourses\icon.png"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Writter" xmlns:command="clr-namespace:Writter.Command"
+        xmlns:local="clr-namespace:Writter" xmlns:command="clr-namespace:Writter.Command" xmlns:validation="clr-namespace:Writter.Help.Validation"
         mc:Ignorable="d" 
         WindowStartupLocation="CenterScreen"
         Title="Log In | Writter" Name="LogInWindow"
@@ -62,14 +62,20 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.ColumnSpan="3" >
                             <TextBox x:Name="Login"
-                             Text="{Binding Login}"
+                             
                              FontSize="15"
                              materialDesign:HintAssist.Hint="Enter login"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                              materialDesign:ColorZoneAssist.Foreground="#f12c6e"
                              HorizontalAlignment="Center"
                              Width="180"
-                             Grid.ColumnSpan="2"/>
+                             Grid.ColumnSpan="2">
+                                <Binding Path="Login" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <validation:LoginValidRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
                             <PasswordBox x:Name="password"
                                  FontSize="15"
                                  materialDesign:HintAssist.Hint="Enter password"

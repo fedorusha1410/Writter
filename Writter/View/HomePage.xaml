@@ -127,7 +127,7 @@
                                 <Border 
                                         BorderBrush="#FFFF2770"
                                         Height="80"
-                                        Width="50"
+                                        Width="60"
                                         Margin="0 17 -2 0">
                                    
                                         <TextBlock x:Name="Latter"
@@ -135,18 +135,18 @@
                                                Grid.Column="0"
                                                Grid.Row="0" />
                                 </Border>
-                                <Image Height="80" Width="50"  Source="{Binding Image, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
+                                <Image Panel.ZIndex="100"  Height="Auto" Width="60" Margin="0 25 0 0"  Source="{Binding Image[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <Border x:Name="Info" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Height="67">
                                     <StackPanel>
-                                        <TextBlock x:Name="Users_name" TextWrapping="WrapWithOverflow"
+                                        <TextBlock x:Name="Users_name" Text="{Binding Name[0], UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" TextWrapping="WrapWithOverflow"
                            FontFamily="/Writter;component/Resourses/#Montserrat Light"
                            FontSize="15"  
-                           Margin="0 5 0 0"/>
+                           Margin="10 5 0 0"/>
                                         <TextBlock Text="Personal Plan"
                            FontFamily="/Writter;component/Resourses/#Montserrat Light"
                            FontSize="10"
                            Foreground="#FF777777"
-                           Margin="0 7 0 0 "/>
+                           Margin="10 7 0 0 "/>
                                     </StackPanel>
 
                                 </Border>

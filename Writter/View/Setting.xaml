@@ -19,7 +19,7 @@
         <TextBlock Text="Information about User"
                    HorizontalAlignment="Center"
                    Margin="37,62,37.6,0"
-                   FontSize="30"
+                   FontSize="27"
                    FontFamily="/Writter;component/#Montserrat Light"
                    FontWeight="DemiBold"
                    Foreground="Gray"
@@ -33,7 +33,7 @@
             </Border.Background>
             <StackPanel>
                 <TextBox x:Name="NameUser" 
-                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Name}"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                            materialDesign:HintAssist.Hint="Name"
                          Background="White"
                          Width="250"
@@ -53,13 +53,13 @@
                          Width="250"
                          HorizontalAlignment="Center"
                          Margin="20 15 0 0" />
-                <Image Source="{Binding }"/>
-                <Button Command="{Binding AddImage}" Width="150" Margin="0 15 0 0">
-                   Add Photo
+               
+                <Button Command="{Binding AddImage}" Width="150" Margin="0 27 80 0">
+                    Сhange photo
                 </Button>
                 <Button VerticalAlignment="Bottom"
                         HorizontalAlignment="Right"
-                        Margin="0 60 10 0"
+                        Margin="0 -44 60 0"
                         Command="{Binding RenameProperties }"
                         >
                     <materialDesign:PackIcon Kind="ContentSaveSettings" Height="20" Width="20"/>
