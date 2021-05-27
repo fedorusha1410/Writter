@@ -26,6 +26,8 @@ namespace Writter
         {
             InitializeComponent();
             this.DataContext = new SettingViewModel();
-        }       
+        }
+
+      
     }
 }

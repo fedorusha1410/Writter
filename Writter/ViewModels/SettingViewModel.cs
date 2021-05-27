@@ -181,5 +181,58 @@ namespace Writter.ViewModels
                 ));
             }
         }
+
+        private RelayCommand deleteAccount;
+        public RelayCommand DeleteAccount
+        {
+            get
+            {
+                return deleteAccount ??
+                    (deleteAccount = new RelayCommand(obj =>
+                    {
+                        try
+                        {
+                            using(WritterModel db= new WritterModel())
+                            {
+                                MainWindow mainWindow = new MainWindow();
+                                mainWindow.Show();
+                                var getUserByLogin = db.USERS.Find(_user.LOGIN);
+                                foreach (var i in db.NOTEs)
+                                {
+                                    foreach (var j in db.STYLEs)
+                                    {
+                                        if (i.LOGIN_USER == getUserByLogin.LOGIN && i.ID_NOTE == j.ID_NOTE)
+                                        {
+                                            db.STYLEs.Remove(j);
+                                            db.NOTEs.Remove(i);
+                                        }
+                                    }
+
+                                }
+
+                                db.USERS.Remove(getUserByLogin);
+                               
+                                db.SaveChanges();
+                                //MessageBox.Show("Your account deleted!");
+                                foreach (Window win in Application.Current.Windows)
+                                {
+                                    if (win.GetType() == typeof(HomePage)) win.Close();
+                                }
+                                foreach (Window win in Application.Current.Windows)
+                                {
+                                    if (win.GetType() == typeof(Setting)) win.Close();
+                                }
+                            }
+                            
+                        }catch(Exception e)
+                        {
+                            MessageBox.Show(e.Message);
+                        }
+                       
+                       
+                       
+                    }));
+            }
+        }
     }
 }

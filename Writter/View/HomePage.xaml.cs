@@ -129,7 +129,17 @@ namespace Writter
         }
         private void OpenSetting(object sender, RoutedEventArgs e)
         {
+            
+            foreach(Window win in Application.Current.Windows)
+            {
+                if (win.GetType() == typeof(Setting) ) win.Close();
+            }
             Setting setting = new Setting(uSERS1);
+            if (uSERS1.LOGIN == "admin")
+            {
+                setting.DeleteAccount.Visibility = Visibility.Collapsed;
+                setting.DangerZone.Visibility = Visibility.Collapsed;
+            }
             setting.Show();
         }
         private void LogOutButton(object sender, RoutedEventArgs e)

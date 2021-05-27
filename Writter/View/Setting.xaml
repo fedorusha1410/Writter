@@ -5,7 +5,7 @@
         Icon="D:\УЧЕБА 2 КУРС\2СЕМЕСТР\coursework\Writter\Resourses\icon.png"
            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Writter"
+        xmlns:local="clr-namespace:Writter" xmlns:validation="clr-namespace:Writter.Help.Validation"
         mc:Ignorable="d"
         Title="Setting | Writter"
         Height="450"
@@ -18,8 +18,8 @@
     <Grid>
         <TextBlock Text="Information about User"
                    HorizontalAlignment="Center"
-                   Margin="37,62,37.6,0"
-                   FontSize="27"
+                   Margin="-13,88,37.6,0"
+                   FontSize="17"
                    FontFamily="/Writter;component/#Montserrat Light"
                    FontWeight="DemiBold"
                    Foreground="Gray"
@@ -33,12 +33,18 @@
             </Border.Background>
             <StackPanel>
                 <TextBox x:Name="NameUser" 
-                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                            materialDesign:HintAssist.Hint="Name"
                          Background="White"
                          Width="250"
                          HorizontalAlignment="Center"
-                         Margin="20 75 0 0" Height="35"/>
+                         Margin="20 75 0 0" Height="35">
+                    <Binding Path="Name" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <validation:NameValidRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox>
                 <TextBox x:Name="PassUser"  Text="{Binding Password}"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                          materialDesign:HintAssist.Hint="Old Password"
@@ -64,7 +70,12 @@
                         >
                     <materialDesign:PackIcon Kind="ContentSaveSettings" Height="20" Width="20"/>
                 </Button>
-
+                <TextBlock x:Name="DangerZone" Text="Danger zone"  
+                           Margin="70 20 0 0"
+                           FontFamily="/Writter;component/#Montserrat Light"
+                   FontWeight="DemiBold"
+                   Foreground="#FFAD5F79"/>
+                <Button x:Name="DeleteAccount" Margin="0 5 80 0" Command="{Binding DeleteAccount}" Width="150">Delete my account</Button>
             </StackPanel>
         </Border>
     </Grid>

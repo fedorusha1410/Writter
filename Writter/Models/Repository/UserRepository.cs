@@ -75,10 +75,11 @@ namespace Writter.Models.Repository
             USER user = db.USERS.Find(login);
                 if (user != null)
                 {
-                    if (user.PASSWORD == password && user.STATUS_USER == StatusUser.Active.ToString())
+                    if (user.STATUS_USER == StatusUser.Active.ToString())
                     {
                         return user;
                     }
+                    else throw new Exception("This user is block");
                 }
                 else throw new Exception("Wrong data");
                

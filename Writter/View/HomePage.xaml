@@ -135,7 +135,7 @@
                                                Grid.Column="0"
                                                Grid.Row="0" />
                                 </Border>
-                                <Image Panel.ZIndex="100"  Height="Auto" Width="60" Margin="0 25 0 0"  Source="{Binding Image[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Image Panel.ZIndex="100"  Height="Auto" Width="60" Margin="4 25 0 0"  Source="{Binding Image[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <Border x:Name="Info" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Height="67">
                                     <StackPanel>
                                         <TextBlock x:Name="Users_name" Text="{Binding Name[0], UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" TextWrapping="WrapWithOverflow"
